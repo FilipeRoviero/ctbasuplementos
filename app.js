@@ -4,7 +4,7 @@
 
 // Configuração Geral da Loja
 const STORE_CONFIG = {
-    whatsappNumber: "5541999999999", // Alterar para o número do WhatsApp da loja (com DDD)
+    whatsappNumber: "554191331314", // Alterar para o número do WhatsApp da loja (com DDD)
     pixDiscount: 0.05, // 5% de desconto via Pix
 };
 
