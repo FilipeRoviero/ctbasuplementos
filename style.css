@@ -542,6 +542,22 @@ button {
     gap: 15px;
 }
 
+/* Load More */
+.load-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 /* Card Design */
 .product-card {
     background-color: var(--bg-card);

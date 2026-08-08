@@ -12,144 +12,562 @@ const STORE_CONFIG = {
 const PRODUCTS = [
     {
         id: 1,
-        name: "Whey Protein 80% Concentrado (1kg)",
-        brand: "Growth Supplements",
-        category: "whey-protein",
-        price: 100.00, // Preço Promocional Pix
-        originalPrice: 115.00, // Preço em Cartão
-        image: "assets/whey-protein/whey-health-2kg.png",
-        description: "O Whey Protein mais vendido do Brasil. Alta concentração proteica por dose, auxiliando no ganho e recuperação muscular.",
-        benefits: ["80% de proteína pura", "Rico em BCAAs e Glutamina", "Matéria-prima importada de alta qualidade"],
+        name: "Beta Alanina Muscletech 200g",
+        brand: "Marca",
+        category: "aminoacidos",
+        price: 99.90,
+        originalPrice: 120.00,
+        image: "assets/aminoacidos/beta-alanina-muscletech-200g.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
         nutritional: {
-            "Sabor": "Chocolate Belga",
-            "Dose": "30g (3 colheres)",
-            "Proteína": "24g",
-            "Carboidratos": "4.5g",
-            "Calorias": "120 kcal"
+            "Porção": "X g",
+            "Proteína": "0g",
+            "Carboidratos": "0g"
         }
     },
     {
         id: 2,
-        name: "Creatina Monohidratada (250g)",
-        brand: "Growth Supplements",
-        category: "creatina",
-        price: 85.00,
-        originalPrice: 99.00,
-        image: "assets/creatina/creatina-max-300g.png",
-        description: "Aumento de força explosiva, ganho de energia intramuscular e melhora no rendimento físico de alta intensidade.",
-        benefits: ["Creatina 100% pura e micronizada", "Aumento imediato de força", "Melhora recuperação pós-treino"],
+        name: "Barra Darkbar",
+        brand: "Marca",
+        category: "barrinhas",
+        price: 15.00,
+        originalPrice: 18.00,
+        image: "assets/barrinhas/barra-darkbar.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
         nutritional: {
-            "Tipo": "Monohidratada",
-            "Dose": "3g (1 scoop)",
-            "Creatina Pura": "3g",
-            "Glúten": "Não contém",
+            "Porção": "X g",
+            "Proteína": "0g",
             "Carboidratos": "0g"
         }
     },
     {
         id: 3,
-        name: "100% Whey Concentrado (900g)",
-        brand: "Max Titanium",
-        category: "whey-protein",
-        price: 140.00,
-        originalPrice: 160.00,
-        image: "assets/whey-protein/whey-melius-2kg.png",
-        description: "Composto por proteína concentrada do soro do leite de excelente qualidade, promovendo rápida absorção e síntese proteica.",
-        benefits: ["Proteína de rápida absorção", "Auxilia na hipertrofia de forma acelerada", "Excelente custo-benefício e sabores premiados"],
+        name: "Barra Integral",
+        brand: "Marca",
+        category: "barrinhas",
+        price: 15.00,
+        originalPrice: 18.00,
+        image: "assets/barrinhas/barra-integral.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
         nutritional: {
-            "Sabor": "Baunilha Premium",
-            "Dose": "30g",
-            "Proteína": "21g",
-            "Carboidratos": "5g",
-            "BCAAs": "4.8g"
+            "Porção": "X g",
+            "Proteína": "0g",
+            "Carboidratos": "0g"
         }
     },
     {
         id: 4,
-        name: "Pré-Treino Hórus (300g)",
-        brand: "Max Titanium",
-        category: "pre-treino",
-        price: 120.00,
-        originalPrice: 139.00,
-        image: "assets/pre-treino/pre-bope-150g.png",
-        description: "Formulado com Beta-Alanina, Arginina, Taurina e Cafeína. Foco mental extremo, pump muscular insano e energia inesgotável.",
-        benefits: ["Foco mental e concentração extrema", "Alta vascularização (Arginina)", "Resistência à fadiga muscular (Beta-Alanina)"],
+        name: "Barra Nutrata",
+        brand: "Marca",
+        category: "barrinhas",
+        price: 15.00,
+        originalPrice: 18.00,
+        image: "assets/barrinhas/barra-nutrata.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
         nutritional: {
-            "Sabor": "Frutas Vermelhas",
-            "Dose": "8.4g",
-            "Beta-Alanina": "2g",
-            "Cafeína": "150mg",
-            "Taurina": "1.000mg"
+            "Porção": "X g",
+            "Proteína": "0g",
+            "Carboidratos": "0g"
         }
     },
     {
         id: 5,
-        name: "Pré-Treino Évora PW (300g)",
-        brand: "Integralmedica",
-        category: "pre-treino",
-        price: 115.00,
-        originalPrice: 129.00,
-        image: "assets/pre-treino/pre-clown-350g.png",
-        description: "Desenhado para treinos de altíssima intensidade. Fornece energia explosiva e foco mental absoluto com cafeína de liberação gradual.",
-        benefits: ["Energia de impacto rápido", "Termogênese e foco aprimorados", "Ajuda na quebra de recordes pessoais de força"],
+        name: "Combo Integral Whey Creat",
+        brand: "Marca",
+        category: "combos",
+        price: 250.00,
+        originalPrice: 280.00,
+        image: "assets/combos/combo-integral-whey-creat.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
         nutritional: {
-            "Sabor": "Limão Ácido",
-            "Dose": "5g",
-            "Cafeína": "140mg",
-            "Taurina": "1.000mg",
-            "Glúten": "Não contém"
+            "Porção": "X g",
+            "Proteína": "0g",
+            "Carboidratos": "0g"
         }
     },
     {
         id: 6,
-        name: "Therma Pro Hardcore (120 caps)",
-        brand: "Integralmedica",
-        category: "termogenico",
-        price: 90.00,
-        originalPrice: 109.00,
-        image: "assets/termogenico/2hot-max-200g.png",
-        description: "Poderoso termogênico à base de cafeína concentrada. Acelera o metabolismo basal, auxiliando na queima de gordura e definição muscular.",
-        benefits: ["Aceleração do metabolismo basal", "Maior disposição e queima calórica nos treinos", "Definição muscular visível"],
+        name: "Combo Whey Creat",
+        brand: "Marca",
+        category: "combos",
+        price: 250.00,
+        originalPrice: 280.00,
+        image: "assets/combos/combo-whey-creat.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
         nutritional: {
-            "Formato": "Cápsulas",
-            "Dose": "2 cápsulas",
-            "Cafeína por dose": "280mg",
-            "Carboidratos": "0g",
-            "Sódio": "0mg"
+            "Porção": "X g",
+            "Proteína": "0g",
+            "Carboidratos": "0g"
         }
     },
     {
         id: 7,
-        name: "Combo Monstros (Whey Max + Creatina Growth)",
-        brand: "Max / Growth",
+        name: "Combo Whey Shaker",
+        brand: "Marca",
         category: "combos",
-        price: 215.00,
-        originalPrice: 259.00,
-        image: "assets/combos/combo-whey-creat.png",
-        description: "O combo definitivo para quem busca ganho de massa magra e força bruta. Whey Max Titanium 900g + Creatina Growth 250g + Coqueteleira Brinde.",
-        benefits: ["Super combo promocional", "Proteína de qualidade com creatina pura", "Coqueteleira exclusiva da loja inclusa"],
+        price: 250.00,
+        originalPrice: 280.00,
+        image: "assets/combos/combo-whey-shaker.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
         nutritional: {
-            "Whey": "Max Titanium 900g",
-            "Creatina": "Growth 250g",
-            "Brinde": "Coqueteleira CTBA Suplementos",
-            "Indicação": "Pós-treino de alta carga"
+            "Porção": "X g",
+            "Proteína": "0g",
+            "Carboidratos": "0g"
         }
     },
     {
         id: 8,
-        name: "Combo Definição Insana (Évora + Therma Pro)",
-        brand: "Integralmedica",
-        category: "combos",
-        price: 195.00,
-        originalPrice: 238.00,
-        image: "assets/combos/combo-integral-whey-creat.png",
-        description: "Queime gordura corporal mantendo o rendimento e a energia no topo. Termogênico Therma Pro 120caps + Pré-Treino Évora PW 300g.",
-        benefits: ["Foco e queima termogênica máximos", "Redução rápida de percentual de gordura (BF)", "Ideal para períodos de cutting"],
+        name: "Creatina Dux 300g",
+        brand: "Marca",
+        category: "creatina",
+        price: 99.90,
+        originalPrice: 120.00,
+        image: "assets/creatina/creatina-dux-300g.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
         nutritional: {
-            "Pré-Treino": "Évora PW 300g",
-            "Termogênico": "Therma Pro 120 caps",
-            "Combinação": "Foco + Aceleração Metabólica",
-            "Indicação": "Antes do aeróbico/treino"
+            "Porção": "X g",
+            "Proteína": "0g",
+            "Carboidratos": "0g"
+        }
+    },
+    {
+        id: 9,
+        name: "Creatina Integral 300g",
+        brand: "Marca",
+        category: "creatina",
+        price: 99.90,
+        originalPrice: 120.00,
+        image: "assets/creatina/creatina-integral-300g.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
+        nutritional: {
+            "Porção": "X g",
+            "Proteína": "0g",
+            "Carboidratos": "0g"
+        }
+    },
+    {
+        id: 10,
+        name: "Creatina Max 300g",
+        brand: "Marca",
+        category: "creatina",
+        price: 99.90,
+        originalPrice: 120.00,
+        image: "assets/creatina/creatina-max-300g.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
+        nutritional: {
+            "Porção": "X g",
+            "Proteína": "0g",
+            "Carboidratos": "0g"
+        }
+    },
+    {
+        id: 11,
+        name: "Hiper Sem Lactose 2kg",
+        brand: "Marca",
+        category: "hiper-sem-lac",
+        price: 99.90,
+        originalPrice: 120.00,
+        image: "assets/hiper-sem-lac/hiper-sem-lactose-2kg.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
+        nutritional: {
+            "Porção": "X g",
+            "Proteína": "0g",
+            "Carboidratos": "0g"
+        }
+    },
+    {
+        id: 12,
+        name: "Hiper Charge 3kg",
+        brand: "Marca",
+        category: "hipercalorico",
+        price: 99.90,
+        originalPrice: 120.00,
+        image: "assets/hipercalorico/hiper-charge-3kg.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
+        nutritional: {
+            "Porção": "X g",
+            "Proteína": "0g",
+            "Carboidratos": "0g"
+        }
+    },
+    {
+        id: 13,
+        name: "Hiper Integral 3kg",
+        brand: "Marca",
+        category: "hipercalorico",
+        price: 99.90,
+        originalPrice: 120.00,
+        image: "assets/hipercalorico/hiper-integral-3kg.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
+        nutritional: {
+            "Porção": "X g",
+            "Proteína": "0g",
+            "Carboidratos": "0g"
+        }
+    },
+    {
+        id: 14,
+        name: "Hiper Max 3kg",
+        brand: "Marca",
+        category: "hipercalorico",
+        price: 99.90,
+        originalPrice: 120.00,
+        image: "assets/hipercalorico/hiper-max-3kg.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
+        nutritional: {
+            "Porção": "X g",
+            "Proteína": "0g",
+            "Carboidratos": "0g"
+        }
+    },
+    {
+        id: 15,
+        name: "Dr. Peanut 600g",
+        brand: "Marca",
+        category: "pasta-de-amendoim",
+        price: 99.90,
+        originalPrice: 120.00,
+        image: "assets/pasta-de-amendoim/drpeanut-600g.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
+        nutritional: {
+            "Porção": "X g",
+            "Proteína": "0g",
+            "Carboidratos": "0g"
+        }
+    },
+    {
+        id: 16,
+        name: "Laganexa 1kg",
+        brand: "Marca",
+        category: "pasta-de-amendoim",
+        price: 99.90,
+        originalPrice: 120.00,
+        image: "assets/pasta-de-amendoim/laganexa-1kg.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
+        nutritional: {
+            "Porção": "X g",
+            "Proteína": "0g",
+            "Carboidratos": "0g"
+        }
+    },
+    {
+        id: 17,
+        name: "Laganexa 450g",
+        brand: "Marca",
+        category: "pasta-de-amendoim",
+        price: 99.90,
+        originalPrice: 120.00,
+        image: "assets/pasta-de-amendoim/laganexa-450g.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
+        nutritional: {
+            "Porção": "X g",
+            "Proteína": "0g",
+            "Carboidratos": "0g"
+        }
+    },
+    {
+        id: 18,
+        name: "Dila Pump 300g",
+        brand: "Marca",
+        category: "pre-sem-cafeina",
+        price: 99.90,
+        originalPrice: 120.00,
+        image: "assets/pre-sem-cafeina/dila-pump-300g.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
+        nutritional: {
+            "Porção": "X g",
+            "Proteína": "0g",
+            "Carboidratos": "0g"
+        }
+    },
+    {
+        id: 19,
+        name: "Pre Night 200g",
+        brand: "Marca",
+        category: "pre-sem-cafeina",
+        price: 99.90,
+        originalPrice: 120.00,
+        image: "assets/pre-sem-cafeina/pre-night-200g.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
+        nutritional: {
+            "Porção": "X g",
+            "Proteína": "0g",
+            "Carboidratos": "0g"
+        }
+    },
+    {
+        id: 20,
+        name: "Vasculos 300g",
+        brand: "Marca",
+        category: "pre-sem-cafeina",
+        price: 99.90,
+        originalPrice: 120.00,
+        image: "assets/pre-sem-cafeina/vasculos-300g.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
+        nutritional: {
+            "Porção": "X g",
+            "Proteína": "0g",
+            "Carboidratos": "0g"
+        }
+    },
+    {
+        id: 21,
+        name: "Pre Bope 150g",
+        brand: "Marca",
+        category: "pre-treino",
+        price: 99.90,
+        originalPrice: 120.00,
+        image: "assets/pre-treino/pre-bope-150g.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
+        nutritional: {
+            "Porção": "X g",
+            "Proteína": "0g",
+            "Carboidratos": "0g"
+        }
+    },
+    {
+        id: 22,
+        name: "Pre Clown 350g",
+        brand: "Marca",
+        category: "pre-treino",
+        price: 99.90,
+        originalPrice: 120.00,
+        image: "assets/pre-treino/pre-clown-350g.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
+        nutritional: {
+            "Porção": "X g",
+            "Proteína": "0g",
+            "Carboidratos": "0g"
+        }
+    },
+    {
+        id: 23,
+        name: "Pre Psicho Killer 294g",
+        brand: "Marca",
+        category: "pre-treino",
+        price: 99.90,
+        originalPrice: 120.00,
+        image: "assets/pre-treino/pre-psicho-killer-294g.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
+        nutritional: {
+            "Porção": "X g",
+            "Proteína": "0g",
+            "Carboidratos": "0g"
+        }
+    },
+    {
+        id: 24,
+        name: "Energy Kick 1kg",
+        brand: "Marca",
+        category: "repositores",
+        price: 99.90,
+        originalPrice: 120.00,
+        image: "assets/repositores/energy-kick-1kg.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
+        nutritional: {
+            "Porção": "X g",
+            "Proteína": "0g",
+            "Carboidratos": "0g"
+        }
+    },
+    {
+        id: 25,
+        name: "2Hot Max 200g",
+        brand: "Marca",
+        category: "termogenico",
+        price: 99.90,
+        originalPrice: 120.00,
+        image: "assets/termogenico/2hot-max-200g.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
+        nutritional: {
+            "Porção": "X g",
+            "Proteína": "0g",
+            "Carboidratos": "0g"
+        }
+    },
+    {
+        id: 26,
+        name: "Dimethylex 60caps",
+        brand: "Marca",
+        category: "termogenico",
+        price: 99.90,
+        originalPrice: 120.00,
+        image: "assets/termogenico/dimethylex-60caps.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
+        nutritional: {
+            "Porção": "X g",
+            "Proteína": "0g",
+            "Carboidratos": "0g"
+        }
+    },
+    {
+        id: 27,
+        name: "Psicho Killer 60caps",
+        brand: "Marca",
+        category: "termogenico",
+        price: 99.90,
+        originalPrice: 120.00,
+        image: "assets/termogenico/psicho-killer-60caps.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
+        nutritional: {
+            "Porção": "X g",
+            "Proteína": "0g",
+            "Carboidratos": "0g"
+        }
+    },
+    {
+        id: 28,
+        name: "Multivit Dux 90caps",
+        brand: "Marca",
+        category: "vitaminas e omega 3",
+        price: 99.90,
+        originalPrice: 120.00,
+        image: "assets/vitaminas e omega 3/multivit-dux-90caps.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
+        nutritional: {
+            "Porção": "X g",
+            "Proteína": "0g",
+            "Carboidratos": "0g"
+        }
+    },
+    {
+        id: 29,
+        name: "Omega3 Dux 120caps",
+        brand: "Marca",
+        category: "vitaminas e omega 3",
+        price: 99.90,
+        originalPrice: 120.00,
+        image: "assets/vitaminas e omega 3/omega3-dux-120caps.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
+        nutritional: {
+            "Porção": "X g",
+            "Proteína": "0g",
+            "Carboidratos": "0g"
+        }
+    },
+    {
+        id: 30,
+        name: "Carnibol 900g",
+        brand: "Marca",
+        category: "whey-iso",
+        price: 99.90,
+        originalPrice: 120.00,
+        image: "assets/whey-iso/carnibol-900g.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
+        nutritional: {
+            "Porção": "X g",
+            "Proteína": "0g",
+            "Carboidratos": "0g"
+        }
+    },
+    {
+        id: 31,
+        name: "Iso Dux 900g",
+        brand: "Marca",
+        category: "whey-iso",
+        price: 99.90,
+        originalPrice: 120.00,
+        image: "assets/whey-iso/iso-dux-900g.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
+        nutritional: {
+            "Porção": "X g",
+            "Proteína": "0g",
+            "Carboidratos": "0g"
+        }
+    },
+    {
+        id: 32,
+        name: "Isolate Prime 900g",
+        brand: "Marca",
+        category: "whey-iso",
+        price: 99.90,
+        originalPrice: 120.00,
+        image: "assets/whey-iso/isolate-prime-900g.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
+        nutritional: {
+            "Porção": "X g",
+            "Proteína": "0g",
+            "Carboidratos": "0g"
+        }
+    },
+    {
+        id: 33,
+        name: "Whey Fhealt 2kg",
+        brand: "Marca",
+        category: "whey-protein",
+        price: 99.90,
+        originalPrice: 120.00,
+        image: "assets/whey-protein/whey-fhealt-2kg.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
+        nutritional: {
+            "Porção": "X g",
+            "Proteína": "0g",
+            "Carboidratos": "0g"
+        }
+    },
+    {
+        id: 34,
+        name: "Whey Health 2kg",
+        brand: "Marca",
+        category: "whey-protein",
+        price: 99.90,
+        originalPrice: 120.00,
+        image: "assets/whey-protein/whey-health-2kg.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
+        nutritional: {
+            "Porção": "X g",
+            "Proteína": "0g",
+            "Carboidratos": "0g"
+        }
+    },
+    {
+        id: 35,
+        name: "Whey Melius 2kg",
+        brand: "Marca",
+        category: "whey-protein",
+        price: 99.90,
+        originalPrice: 120.00,
+        image: "assets/whey-protein/whey-melius-2kg.png",
+        description: "Descrição provisória. Altere depois.",
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
+        nutritional: {
+            "Porção": "X g",
+            "Proteína": "0g",
+            "Carboidratos": "0g"
         }
     }
 ];
@@ -158,9 +576,12 @@ const PRODUCTS = [
 let cart = [];
 let currentCategory = "todos";
 let searchQuery = "";
+let displayLimit = 8; // Limit for 'todos'
 
 // Elementos do DOM
 const productsGrid = document.getElementById("products-grid");
+const loadMoreContainer = document.getElementById("load-more-container");
+const loadMoreBtn = document.getElementById("load-more-btn");
 const filterButtons = document.querySelectorAll(".filter-btn");
 const searchInputDesktop = document.getElementById("search-input-desktop");
 const searchInputMobile = document.getElementById("search-input-mobile");
@@ -201,12 +622,20 @@ document.addEventListener("DOMContentLoaded", () => {
 // Event Listeners Setup
 // ==========================================================================
 function setupEventListeners() {
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener("click", () => {
+            displayLimit = Infinity;
+            renderProducts();
+        });
+    }
+
     // Filtros por categoria
     filterButtons.forEach(btn => {
         btn.addEventListener("click", (e) => {
             filterButtons.forEach(b => b.classList.remove("active"));
             btn.classList.add("active");
             currentCategory = btn.dataset.category;
+            displayLimit = 8;
             renderProducts();
         });
     });
@@ -225,6 +654,7 @@ function setupEventListeners() {
     // Busca de texto (Desktop e Mobile)
     const handleSearch = (e) => {
         searchQuery = e.target.value.toLowerCase().trim();
+        displayLimit = 8;
         
         // Sincroniza campos de busca
         if (e.target === searchInputDesktop) {
@@ -248,6 +678,7 @@ function setupEventListeners() {
     // Limpar filtros de busca
     clearSearchBtn.addEventListener("click", () => {
         searchQuery = "";
+        displayLimit = 8;
         searchInputDesktop.value = "";
         searchInputMobile.value = "";
         searchStatus.classList.add("hidden");
@@ -298,7 +729,23 @@ function renderProducts() {
         return matchesCategory && matchesSearch;
     });
 
-    if (filteredProducts.length === 0) {
+    let productsToRender = filteredProducts;
+
+    if (currentCategory === "todos" && searchQuery === "") {
+        productsToRender = filteredProducts.slice(0, displayLimit);
+        
+        if (filteredProducts.length > displayLimit) {
+            loadMoreContainer.classList.remove("hidden");
+        } else {
+            loadMoreContainer.classList.add("hidden");
+        }
+    } else {
+        if (loadMoreContainer) {
+            loadMoreContainer.classList.add("hidden");
+        }
+    }
+
+    if (productsToRender.length === 0) {
         productsGrid.innerHTML = `
             <div class="loading-products">
                 <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-muted);"><circle cx="12" cy="12" r="10"></circle><line x1="8" y1="12" x2="16" y2="12"></line></svg>
@@ -308,7 +755,7 @@ function renderProducts() {
         return;
     }
 
-    filteredProducts.forEach(prod => {
+    productsToRender.forEach(prod => {
         const hasDiscount = prod.originalPrice && prod.originalPrice > prod.price;
         const card = document.createElement("div");
         card.className = "product-card";
