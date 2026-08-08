@@ -83,24 +83,49 @@
 
         <div class="category-filters">
             <button class="filter-btn active" data-category="todos">
-                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
                 Todos
             </button>
-            <button class="filter-btn" data-category="hipertrofia">
-                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h2M18 18h2a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2h-2M6 12h12M6.5 7v10M17.5 7v10M10.5 9v6M13.5 9v6"></path></svg>
-                Massa & Hipertrofia
+            <button class="filter-btn" data-category="aminoacidos">
+                Aminoácidos
             </button>
-            <button class="filter-btn" data-category="performance">
-                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-                Força & Performance
-            </button>
-            <button class="filter-btn" data-category="definicao">
-                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 3z"></path></svg>
-                Definição & Emagrecimento
+            <button class="filter-btn" data-category="barrinhas">
+                Barrinhas
             </button>
             <button class="filter-btn" data-category="combos">
-                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-                Kits Promocionais
+                Combos
+            </button>
+            <button class="filter-btn" data-category="creatina">
+                Creatina
+            </button>
+            <button class="filter-btn" data-category="hiper-sem-lac">
+                Hipercalórico Zero Lactose
+            </button>
+            <button class="filter-btn" data-category="hipercalorico">
+                Hipercalórico
+            </button>
+            <button class="filter-btn" data-category="pasta-de-amendoim">
+                Pasta de Amendoim
+            </button>
+            <button class="filter-btn" data-category="pre-sem-cafeina">
+                Pré-treino S/ Cafeína
+            </button>
+            <button class="filter-btn" data-category="pre-treino">
+                Pré-treino
+            </button>
+            <button class="filter-btn" data-category="repositores">
+                Repositores
+            </button>
+            <button class="filter-btn" data-category="termogenico">
+                Termogênico
+            </button>
+            <button class="filter-btn" data-category="vitaminas e omega 3">
+                Vitaminas e Ômega 3
+            </button>
+            <button class="filter-btn" data-category="whey-iso">
+                Whey Isolado
+            </button>
+            <button class="filter-btn" data-category="whey-protein">
+                Whey Protein
             </button>
         </div>
 
@@ -114,6 +139,10 @@
         <div id="products-grid" class="products-grid">
             <!-- Loading state / products will be loaded via JS -->
             <div class="loading-products">Carregando produtos...</div>
+        </div>
+
+        <div id="load-more-container" class="load-more-container hidden">
+            <button id="load-more-btn" class="btn btn-outline btn-lg fade-in">Ver mais suplementos</button>
         </div>
     </section>
 
@@ -201,10 +230,20 @@
             <div class="footer-links">
                 <h4>Categorias</h4>
                 <ul>
-                    <li><a href="#catalogo" class="cat-link" data-cat="hipertrofia">Massa & Hipertrofia</a></li>
-                    <li><a href="#catalogo" class="cat-link" data-cat="performance">Força & Performance</a></li>
-                    <li><a href="#catalogo" class="cat-link" data-cat="definicao">Definição & Emagrecimento</a></li>
-                    <li><a href="#catalogo" class="cat-link" data-cat="combos">Kits Promocionais</a></li>
+                    <li><a href="#catalogo" class="cat-link" data-cat="aminoacidos">Aminoácidos</a></li>
+                    <li><a href="#catalogo" class="cat-link" data-cat="barrinhas">Barrinhas</a></li>
+                    <li><a href="#catalogo" class="cat-link" data-cat="combos">Combos</a></li>
+                    <li><a href="#catalogo" class="cat-link" data-cat="creatina">Creatina</a></li>
+                    <li><a href="#catalogo" class="cat-link" data-cat="hiper-sem-lac">Hipercalórico Zero Lactose</a></li>
+                    <li><a href="#catalogo" class="cat-link" data-cat="hipercalorico">Hipercalórico</a></li>
+                    <li><a href="#catalogo" class="cat-link" data-cat="pasta-de-amendoim">Pasta de Amendoim</a></li>
+                    <li><a href="#catalogo" class="cat-link" data-cat="pre-sem-cafeina">Pré-treino S/ Cafeína</a></li>
+                    <li><a href="#catalogo" class="cat-link" data-cat="pre-treino">Pré-treino</a></li>
+                    <li><a href="#catalogo" class="cat-link" data-cat="repositores">Repositores</a></li>
+                    <li><a href="#catalogo" class="cat-link" data-cat="termogenico">Termogênico</a></li>
+                    <li><a href="#catalogo" class="cat-link" data-cat="vitaminas e omega 3">Vitaminas e Ômega 3</a></li>
+                    <li><a href="#catalogo" class="cat-link" data-cat="whey-iso">Whey Isolado</a></li>
+                    <li><a href="#catalogo" class="cat-link" data-cat="whey-protein">Whey Protein</a></li>
                 </ul>
             </div>
 
