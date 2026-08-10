@@ -5,7 +5,6 @@
 // Configuração Geral da Loja
 const STORE_CONFIG = {
     whatsappNumber: "554191331314", // Alterar para o número do WhatsApp da loja (com DDD)
-    pixDiscount: 0.05, // 5% de desconto via Pix
 };
 
 // Banco de Dados de Produtos Mock
@@ -13,50 +12,38 @@ const PRODUCTS = [
     {
         id: 1,
         name: "Beta Alanina Muscletech 200g",
-        brand: "Marca",
+        brand: "Muscletech",
         category: "aminoacidos",
-        price: 99.90,
-        originalPrice: 120.00,
+        price: 79.90,
         image: "assets/aminoacidos/beta-alanina-muscletech-200g.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
+        description: "Seu limite é o próximo nível. Com Beta Alanina Muscletech, você treina mais forte, aguenta mais e recupera melhor. Pura performance para quem não aceita estagnação.",
+        benefits: ["Aumento de força", "Recuperação mais rápida", "Performance melhor"
+
+        ]
     },
     {
         id: 2,
-        name: "Barra Darkbar",
-        brand: "Marca",
+        name: "Barra Darkbar com 08 unidades",
+        brand: "Darkbar",
         category: "barrinhas",
-        price: 15.00,
-        originalPrice: 18.00,
+        price: 109.00,
         image: "assets/barrinhas/barra-darkbar.png",
         description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+
+        ]
     },
     {
         id: 3,
         name: "Barra Integral",
-        brand: "Marca",
+        brand: "Integral",
         category: "barrinhas",
-        price: 15.00,
-        originalPrice: 18.00,
+        price: 99.90,
         image: "assets/barrinhas/barra-integral.png",
         description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+
+        ]
     },
     {
         id: 4,
@@ -64,15 +51,11 @@ const PRODUCTS = [
         brand: "Marca",
         category: "barrinhas",
         price: 15.00,
-        originalPrice: 18.00,
         image: "assets/barrinhas/barra-nutrata.png",
         description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+
+        ]
     },
     {
         id: 5,
@@ -80,15 +63,11 @@ const PRODUCTS = [
         brand: "Marca",
         category: "combos",
         price: 250.00,
-        originalPrice: 280.00,
         image: "assets/combos/combo-integral-whey-creat.png",
         description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+
+        ]
     },
     {
         id: 6,
@@ -96,15 +75,11 @@ const PRODUCTS = [
         brand: "Marca",
         category: "combos",
         price: 250.00,
-        originalPrice: 280.00,
         image: "assets/combos/combo-whey-creat.png",
         description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+
+        ]
     },
     {
         id: 7,
@@ -112,15 +87,11 @@ const PRODUCTS = [
         brand: "Marca",
         category: "combos",
         price: 250.00,
-        originalPrice: 280.00,
         image: "assets/combos/combo-whey-shaker.png",
         description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+
+        ]
     },
     {
         id: 8,
@@ -128,15 +99,11 @@ const PRODUCTS = [
         brand: "Marca",
         category: "creatina",
         price: 99.90,
-        originalPrice: 120.00,
         image: "assets/creatina/creatina-dux-300g.png",
         description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+
+        ]
     },
     {
         id: 9,
@@ -144,15 +111,11 @@ const PRODUCTS = [
         brand: "Marca",
         category: "creatina",
         price: 99.90,
-        originalPrice: 120.00,
         image: "assets/creatina/creatina-integral-300g.png",
         description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+
+        ]
     },
     {
         id: 10,
@@ -160,15 +123,11 @@ const PRODUCTS = [
         brand: "Marca",
         category: "creatina",
         price: 99.90,
-        originalPrice: 120.00,
         image: "assets/creatina/creatina-max-300g.png",
         description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+
+        ]
     },
     {
         id: 11,
@@ -176,15 +135,11 @@ const PRODUCTS = [
         brand: "Marca",
         category: "hiper-sem-lac",
         price: 99.90,
-        originalPrice: 120.00,
         image: "assets/hiper-sem-lac/hiper-sem-lactose-2kg.png",
         description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+
+        ]
     },
     {
         id: 12,
@@ -192,15 +147,11 @@ const PRODUCTS = [
         brand: "Marca",
         category: "hipercalorico",
         price: 99.90,
-        originalPrice: 120.00,
         image: "assets/hipercalorico/hiper-charge-3kg.png",
         description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+
+        ]
     },
     {
         id: 13,
@@ -208,15 +159,11 @@ const PRODUCTS = [
         brand: "Marca",
         category: "hipercalorico",
         price: 99.90,
-        originalPrice: 120.00,
         image: "assets/hipercalorico/hiper-integral-3kg.png",
         description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+
+        ]
     },
     {
         id: 14,
@@ -224,15 +171,11 @@ const PRODUCTS = [
         brand: "Marca",
         category: "hipercalorico",
         price: 99.90,
-        originalPrice: 120.00,
         image: "assets/hipercalorico/hiper-max-3kg.png",
         description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+
+        ]
     },
     {
         id: 15,
@@ -240,15 +183,11 @@ const PRODUCTS = [
         brand: "Marca",
         category: "pasta-de-amendoim",
         price: 99.90,
-        originalPrice: 120.00,
         image: "assets/pasta-de-amendoim/drpeanut-600g.png",
         description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+
+        ]
     },
     {
         id: 16,
@@ -256,15 +195,11 @@ const PRODUCTS = [
         brand: "Marca",
         category: "pasta-de-amendoim",
         price: 99.90,
-        originalPrice: 120.00,
         image: "assets/pasta-de-amendoim/laganexa-1kg.png",
         description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+
+        ]
     },
     {
         id: 17,
@@ -272,15 +207,11 @@ const PRODUCTS = [
         brand: "Marca",
         category: "pasta-de-amendoim",
         price: 99.90,
-        originalPrice: 120.00,
         image: "assets/pasta-de-amendoim/laganexa-450g.png",
         description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+
+        ]
     },
     {
         id: 18,
@@ -288,15 +219,11 @@ const PRODUCTS = [
         brand: "Marca",
         category: "pre-sem-cafeina",
         price: 99.90,
-        originalPrice: 120.00,
         image: "assets/pre-sem-cafeina/dila-pump-300g.png",
         description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+
+        ]
     },
     {
         id: 19,
@@ -304,15 +231,11 @@ const PRODUCTS = [
         brand: "Marca",
         category: "pre-sem-cafeina",
         price: 99.90,
-        originalPrice: 120.00,
         image: "assets/pre-sem-cafeina/pre-night-200g.png",
         description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+
+        ]
     },
     {
         id: 20,
@@ -320,15 +243,11 @@ const PRODUCTS = [
         brand: "Marca",
         category: "pre-sem-cafeina",
         price: 99.90,
-        originalPrice: 120.00,
         image: "assets/pre-sem-cafeina/vasculos-300g.png",
         description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+
+        ]
     },
     {
         id: 21,
@@ -336,15 +255,11 @@ const PRODUCTS = [
         brand: "Marca",
         category: "pre-treino",
         price: 99.90,
-        originalPrice: 120.00,
         image: "assets/pre-treino/pre-bope-150g.png",
         description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+
+        ]
     },
     {
         id: 22,
@@ -352,15 +267,11 @@ const PRODUCTS = [
         brand: "Marca",
         category: "pre-treino",
         price: 99.90,
-        originalPrice: 120.00,
         image: "assets/pre-treino/pre-clown-350g.png",
         description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+
+        ]
     },
     {
         id: 23,
@@ -368,15 +279,11 @@ const PRODUCTS = [
         brand: "Marca",
         category: "pre-treino",
         price: 99.90,
-        originalPrice: 120.00,
         image: "assets/pre-treino/pre-psicho-killer-294g.png",
         description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+
+        ]
     },
     {
         id: 24,
@@ -384,15 +291,11 @@ const PRODUCTS = [
         brand: "Marca",
         category: "repositores",
         price: 99.90,
-        originalPrice: 120.00,
         image: "assets/repositores/energy-kick-1kg.png",
         description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+
+        ]
     },
     {
         id: 25,
@@ -400,15 +303,11 @@ const PRODUCTS = [
         brand: "Marca",
         category: "termogenico",
         price: 99.90,
-        originalPrice: 120.00,
         image: "assets/termogenico/2hot-max-200g.png",
         description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+
+        ]
     },
     {
         id: 26,
@@ -416,15 +315,11 @@ const PRODUCTS = [
         brand: "Marca",
         category: "termogenico",
         price: 99.90,
-        originalPrice: 120.00,
         image: "assets/termogenico/dimethylex-60caps.png",
         description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+
+        ]
     },
     {
         id: 27,
@@ -432,15 +327,11 @@ const PRODUCTS = [
         brand: "Marca",
         category: "termogenico",
         price: 99.90,
-        originalPrice: 120.00,
         image: "assets/termogenico/psicho-killer-60caps.png",
         description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+
+        ]
     },
     {
         id: 28,
@@ -448,15 +339,11 @@ const PRODUCTS = [
         brand: "Marca",
         category: "vitaminas e omega 3",
         price: 99.90,
-        originalPrice: 120.00,
         image: "assets/vitaminas e omega 3/multivit-dux-90caps.png",
         description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+
+        ]
     },
     {
         id: 29,
@@ -464,15 +351,11 @@ const PRODUCTS = [
         brand: "Marca",
         category: "vitaminas e omega 3",
         price: 99.90,
-        originalPrice: 120.00,
         image: "assets/vitaminas e omega 3/omega3-dux-120caps.png",
         description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+
+        ]
     },
     {
         id: 30,
@@ -480,15 +363,11 @@ const PRODUCTS = [
         brand: "Marca",
         category: "whey-iso",
         price: 99.90,
-        originalPrice: 120.00,
         image: "assets/whey-iso/carnibol-900g.png",
         description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+
+        ]
     },
     {
         id: 31,
@@ -496,15 +375,11 @@ const PRODUCTS = [
         brand: "Marca",
         category: "whey-iso",
         price: 99.90,
-        originalPrice: 120.00,
         image: "assets/whey-iso/iso-dux-900g.png",
         description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+
+        ]
     },
     {
         id: 32,
@@ -512,15 +387,11 @@ const PRODUCTS = [
         brand: "Marca",
         category: "whey-iso",
         price: 99.90,
-        originalPrice: 120.00,
         image: "assets/whey-iso/isolate-prime-900g.png",
         description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+
+        ]
     },
     {
         id: 33,
@@ -528,15 +399,11 @@ const PRODUCTS = [
         brand: "Marca",
         category: "whey-protein",
         price: 99.90,
-        originalPrice: 120.00,
         image: "assets/whey-protein/whey-fhealt-2kg.png",
         description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+
+        ]
     },
     {
         id: 34,
@@ -544,15 +411,11 @@ const PRODUCTS = [
         brand: "Marca",
         category: "whey-protein",
         price: 99.90,
-        originalPrice: 120.00,
         image: "assets/whey-protein/whey-health-2kg.png",
         description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+
+        ]
     },
     {
         id: 35,
@@ -560,16 +423,13 @@ const PRODUCTS = [
         brand: "Marca",
         category: "whey-protein",
         price: 99.90,
-        originalPrice: 120.00,
         image: "assets/whey-protein/whey-melius-2kg.png",
         description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"],
-        nutritional: {
-            "Porção": "X g",
-            "Proteína": "0g",
-            "Carboidratos": "0g"
-        }
-    }
+        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+
+        ]
+    },
+
 ];
 
 // Estado da Aplicação
@@ -655,7 +515,7 @@ function setupEventListeners() {
     const handleSearch = (e) => {
         searchQuery = e.target.value.toLowerCase().trim();
         displayLimit = 8;
-        
+
         // Sincroniza campos de busca
         if (e.target === searchInputDesktop) {
             searchInputMobile.value = e.target.value;
@@ -689,7 +549,7 @@ function setupEventListeners() {
     cartToggleBtn.addEventListener("click", openCart);
     cartCloseBtn.addEventListener("click", closeCart);
     cartOverlay.addEventListener("click", closeCart);
-    
+
     // Links de fechar carrinho no drawer
     document.addEventListener("click", (e) => {
         if (e.target.classList.contains("close-cart-link")) {
@@ -722,7 +582,7 @@ function renderProducts() {
     // Filtragem baseada na categoria e na barra de pesquisa
     const filteredProducts = PRODUCTS.filter(prod => {
         const matchesCategory = currentCategory === "todos" || prod.category === currentCategory;
-        const matchesSearch = searchQuery === "" || 
+        const matchesSearch = searchQuery === "" ||
             prod.name.toLowerCase().includes(searchQuery) ||
             prod.brand.toLowerCase().includes(searchQuery) ||
             prod.description.toLowerCase().includes(searchQuery);
@@ -733,7 +593,7 @@ function renderProducts() {
 
     if (currentCategory === "todos" && searchQuery === "") {
         productsToRender = filteredProducts.slice(0, displayLimit);
-        
+
         if (filteredProducts.length > displayLimit) {
             loadMoreContainer.classList.remove("hidden");
         } else {
@@ -759,7 +619,7 @@ function renderProducts() {
         const hasDiscount = prod.originalPrice && prod.originalPrice > prod.price;
         const card = document.createElement("div");
         card.className = "product-card";
-        
+
         card.innerHTML = `
             ${hasDiscount ? `<span class="product-badge">🔥 OFERTA</span>` : ''}
             <span class="product-brand">${prod.brand}</span>
@@ -772,7 +632,6 @@ function renderProducts() {
                 <div class="product-price-box">
                     ${hasDiscount ? `<span class="old-price">R$ ${prod.originalPrice.toFixed(2)}</span>` : ''}
                     <span class="current-price">R$ ${prod.price.toFixed(2)}</span>
-                    <span class="pix-note">no Pix (-5%) ou R$ ${(prod.price / (1 - STORE_CONFIG.pixDiscount)).toFixed(2)} no cartão</span>
                 </div>
                 <div class="product-actions">
                     <button class="btn btn-primary" onclick="buyNowSingle(${prod.id})">
@@ -784,7 +643,7 @@ function renderProducts() {
                 </div>
             </div>
         `;
-        
+
         productsGrid.appendChild(card);
     });
 }
@@ -809,7 +668,7 @@ function addToCart(productId) {
     saveCartToLocalStorage();
     updateCartUI();
     openCart();
-    
+
     // Animação temporária no ícone do carrinho
     cartToggleBtn.style.transform = "scale(1.15)";
     setTimeout(() => {
@@ -850,7 +709,7 @@ function updateCartUI() {
     // Quantidade total de itens
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     cartBadge.textContent = totalItems;
-    
+
     if (totalItems === 0) {
         cartBadge.classList.add("hidden");
     } else {
@@ -868,7 +727,7 @@ function updateCartUI() {
                 <a href="#catalogo" class="btn btn-primary btn-sm close-cart-link">Ver Catálogo</a>
             </div>
         `;
-        
+
         cartSubtotal.textContent = "R$ 0,00";
         pixDiscountRow.classList.add("hidden");
         cartTotal.textContent = "R$ 0,00";
@@ -882,14 +741,14 @@ function updateCartUI() {
     // o preço integral de tabela (Cartão) é calculado a partir do originalPrice
     // ou dividindo o preço promocional Pix para recriar o preço base.
     let baseCartaoSubtotal = 0;
-    
+
     cart.forEach(item => {
         const itemOriginalPrice = item.product.originalPrice || (item.product.price / (1 - STORE_CONFIG.pixDiscount));
         baseCartaoSubtotal += itemOriginalPrice * item.quantity;
 
         const cartItemEl = document.createElement("div");
         cartItemEl.className = "cart-item";
-        
+
         cartItemEl.innerHTML = `
             <div class="cart-item-img">
                 <img src="${item.product.image}" alt="${item.product.name}" onerror="this.src='https://images.unsplash.com/photo-1593095948071-474c5cc2989d?q=80&w=600&auto=format&fit=crop'">
@@ -912,7 +771,7 @@ function updateCartUI() {
                 </div>
             </div>
         `;
-        
+
         cartItemsContainer.appendChild(cartItemEl);
     });
 
@@ -1034,7 +893,7 @@ function buyNowSingle(productId) {
     if (!prod) return;
 
     const cartaoPrice = prod.originalPrice || (prod.price / (1 - STORE_CONFIG.pixDiscount));
-    
+
     let message = `🔥 *OLÁ! QUERO FECHAR ESSE SUPLEMENTO:* 🔥\n\n`;
     message += `👉 *Produto:* ${prod.name}\n`;
     message += `🏷️ *Marca:* ${prod.brand}\n`;
@@ -1053,7 +912,7 @@ function sendCartToWhatsApp() {
     if (cart.length === 0) return;
 
     let baseCartaoSubtotal = 0;
-    
+
     let message = `🔥 *NOVO PEDIDO - CTBA SUPLEMENTOS* 🔥\n`;
     message += `----------------------------------\n`;
     message += `Gostaria de fechar os seguintes suplementos:\n\n`;
@@ -1062,7 +921,7 @@ function sendCartToWhatsApp() {
         const itemOriginalPrice = item.product.originalPrice || (item.product.price / (1 - STORE_CONFIG.pixDiscount));
         const itemSubtotalCartao = itemOriginalPrice * item.quantity;
         baseCartaoSubtotal += itemSubtotalCartao;
-        
+
         message += `*${item.quantity}x* ${item.product.name}\n`;
         message += `   └ Marca: ${item.product.brand}\n`;
         message += `   └ Subtotal: R$ ${itemSubtotalCartao.toFixed(2)} (${item.quantity}x R$ ${itemOriginalPrice.toFixed(2)})\n\n`;
