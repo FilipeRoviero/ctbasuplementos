@@ -35,7 +35,7 @@ const PRODUCTS = [
     },
     {
         id: 3,
-        name: "Barra Integral",
+        name: "Barra Integral caixa com 12",
         brand: "Integral",
         category: "barrinhas",
         price: 99.90,
@@ -47,10 +47,10 @@ const PRODUCTS = [
     },
     {
         id: 4,
-        name: "Barra Nutrata",
+        name: "Barra Nutrata caixa com 12",
         brand: "Marca",
         category: "barrinhas",
-        price: 15.00,
+        price: 89.90,
         image: "assets/barrinhas/barra-nutrata.png",
         description: "Descrição provisória. Altere depois.",
         benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
@@ -59,10 +59,10 @@ const PRODUCTS = [
     },
     {
         id: 5,
-        name: "Combo Integral Whey Creat",
-        brand: "Marca",
+        name: "Combo Integral Whey 900g + Creatina 300g",
+        brand: "Integral",
         category: "combos",
-        price: 250.00,
+        price: 229.90,
         image: "assets/combos/combo-integral-whey-creat.png",
         description: "Descrição provisória. Altere depois.",
         benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
@@ -71,10 +71,10 @@ const PRODUCTS = [
     },
     {
         id: 6,
-        name: "Combo Whey Creat",
-        brand: "Marca",
+        name: "Combo Whey HealthTime 2,1kg + Creatina Dux 300g",
+        brand: "HealthTime + Dux",
         category: "combos",
-        price: 250.00,
+        price: 239.90,
         image: "assets/combos/combo-whey-creat.png",
         description: "Descrição provisória. Altere depois.",
         benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
@@ -83,10 +83,10 @@ const PRODUCTS = [
     },
     {
         id: 7,
-        name: "Combo Whey Shaker",
-        brand: "Marca",
+        name: "Combo Whey HealthTime 2,1kg + Shaker",
+        brand: "HealthTime + Shaker",
         category: "combos",
-        price: 250.00,
+        price: 149.90,
         image: "assets/combos/combo-whey-shaker.png",
         description: "Descrição provisória. Altere depois.",
         benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
@@ -96,9 +96,9 @@ const PRODUCTS = [
     {
         id: 8,
         name: "Creatina Dux 300g",
-        brand: "Marca",
+        brand: "Dux",
         category: "creatina",
-        price: 99.90,
+        price: 69.90,
         image: "assets/creatina/creatina-dux-300g.png",
         description: "Descrição provisória. Altere depois.",
         benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
@@ -108,9 +108,9 @@ const PRODUCTS = [
     {
         id: 9,
         name: "Creatina Integral 300g",
-        brand: "Marca",
+        brand: "Integral",
         category: "creatina",
-        price: 99.90,
+        price: 79.90,
         image: "assets/creatina/creatina-integral-300g.png",
         description: "Descrição provisória. Altere depois.",
         benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
@@ -119,10 +119,10 @@ const PRODUCTS = [
     },
     {
         id: 10,
-        name: "Creatina Max 300g",
-        brand: "Marca",
+        name: "Creatina Max Titanium 300g",
+        brand: "Max Titanium",
         category: "creatina",
-        price: 99.90,
+        price: 69.90,
         image: "assets/creatina/creatina-max-300g.png",
         description: "Descrição provisória. Altere depois.",
         benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
@@ -131,10 +131,10 @@ const PRODUCTS = [
     },
     {
         id: 11,
-        name: "Hiper Sem Lactose 2kg",
-        brand: "Marca",
+        name: "Hipercalórico Sem Lactose Max Titanium 2kg",
+        brand: "Max Titanium",
         category: "hiper-sem-lac",
-        price: 99.90,
+        price: 109.90,
         image: "assets/hiper-sem-lac/hiper-sem-lactose-2kg.png",
         description: "Descrição provisória. Altere depois.",
         benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
@@ -143,8 +143,8 @@ const PRODUCTS = [
     },
     {
         id: 12,
-        name: "Hiper Charge 3kg",
-        brand: "Marca",
+        name: "Hipercalórico X Charge 3kg",
+        brand: "Charge",
         category: "hipercalorico",
         price: 99.90,
         image: "assets/hipercalorico/hiper-charge-3kg.png",
@@ -155,10 +155,10 @@ const PRODUCTS = [
     },
     {
         id: 13,
-        name: "Hiper Integral 3kg",
-        brand: "Marca",
+        name: "Hipercalórico Creamass 3kg",
+        brand: "Integral",
         category: "hipercalorico",
-        price: 99.90,
+        price: 119.90,
         image: "assets/hipercalorico/hiper-integral-3kg.png",
         description: "Descrição provisória. Altere depois.",
         benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
@@ -167,10 +167,10 @@ const PRODUCTS = [
     },
     {
         id: 14,
-        name: "Hiper Max 3kg",
-        brand: "Marca",
+        name: "Hipercalórico Mass Titanium 3kg",
+        brand: "Max",
         category: "hipercalorico",
-        price: 99.90,
+        price: 119.90,
         image: "assets/hipercalorico/hiper-max-3kg.png",
         description: "Descrição provisória. Altere depois.",
         benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
@@ -180,9 +180,9 @@ const PRODUCTS = [
     {
         id: 15,
         name: "Dr. Peanut 600g",
-        brand: "Marca",
+        brand: "Dr Peanut",
         category: "pasta-de-amendoim",
-        price: 99.90,
+        price: 49.90,
         image: "assets/pasta-de-amendoim/drpeanut-600g.png",
         description: "Descrição provisória. Altere depois.",
         benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
@@ -191,10 +191,10 @@ const PRODUCTS = [
     },
     {
         id: 16,
-        name: "Laganexa 1kg",
-        brand: "Marca",
+        name: "La Ganexa 1kg",
+        brand: "La Ganexa",
         category: "pasta-de-amendoim",
-        price: 99.90,
+        price: 69.90,
         image: "assets/pasta-de-amendoim/laganexa-1kg.png",
         description: "Descrição provisória. Altere depois.",
         benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
@@ -203,10 +203,10 @@ const PRODUCTS = [
     },
     {
         id: 17,
-        name: "Laganexa 450g",
-        brand: "Marca",
+        name: "La Ganexa 450g",
+        brand: "La Ganexa",
         category: "pasta-de-amendoim",
-        price: 99.90,
+        price: 44.90,
         image: "assets/pasta-de-amendoim/laganexa-450g.png",
         description: "Descrição provisória. Altere depois.",
         benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
@@ -216,9 +216,9 @@ const PRODUCTS = [
     {
         id: 18,
         name: "Dila Pump 300g",
-        brand: "Marca",
+        brand: "Adaptogen",
         category: "pre-sem-cafeina",
-        price: 99.90,
+        price: 129.90,
         image: "assets/pre-sem-cafeina/dila-pump-300g.png",
         description: "Descrição provisória. Altere depois.",
         benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
@@ -228,9 +228,9 @@ const PRODUCTS = [
     {
         id: 19,
         name: "Pre Night 200g",
-        brand: "Marca",
+        brand: "Bodyaction",
         category: "pre-sem-cafeina",
-        price: 99.90,
+        price: 89.90,
         image: "assets/pre-sem-cafeina/pre-night-200g.png",
         description: "Descrição provisória. Altere depois.",
         benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
@@ -240,9 +240,9 @@ const PRODUCTS = [
     {
         id: 20,
         name: "Vasculos 300g",
-        brand: "Marca",
+        brand: "Darkness",
         category: "pre-sem-cafeina",
-        price: 99.90,
+        price: 119.90,
         image: "assets/pre-sem-cafeina/vasculos-300g.png",
         description: "Descrição provisória. Altere depois.",
         benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
@@ -252,9 +252,9 @@ const PRODUCTS = [
     {
         id: 21,
         name: "Pre Bope 150g",
-        brand: "Marca",
+        brand: "Black Skull",
         category: "pre-treino",
-        price: 99.90,
+        price: 79.90,
         image: "assets/pre-treino/pre-bope-150g.png",
         description: "Descrição provisória. Altere depois.",
         benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
@@ -263,10 +263,10 @@ const PRODUCTS = [
     },
     {
         id: 22,
-        name: "Pre Clown 350g",
-        brand: "Marca",
+        name: "Insane Clown 350g",
+        brand: "Demons Labs",
         category: "pre-treino",
-        price: 99.90,
+        price: 129.90,
         image: "assets/pre-treino/pre-clown-350g.png",
         description: "Descrição provisória. Altere depois.",
         benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
@@ -276,9 +276,9 @@ const PRODUCTS = [
     {
         id: 23,
         name: "Pre Psicho Killer 294g",
-        brand: "Marca",
+        brand: "Demons Labs",
         category: "pre-treino",
-        price: 99.90,
+        price: 129.90,
         image: "assets/pre-treino/pre-psicho-killer-294g.png",
         description: "Descrição provisória. Altere depois.",
         benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
@@ -288,9 +288,9 @@ const PRODUCTS = [
     {
         id: 24,
         name: "Energy Kick 1kg",
-        brand: "Marca",
+        brand: "Dux",
         category: "repositores",
-        price: 99.90,
+        price: 129.90,
         image: "assets/repositores/energy-kick-1kg.png",
         description: "Descrição provisória. Altere depois.",
         benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
@@ -299,10 +299,10 @@ const PRODUCTS = [
     },
     {
         id: 25,
-        name: "2Hot Max 200g",
-        brand: "Marca",
+        name: "Thermo 2Hot Max 200g",
+        brand: "Max Titanium",
         category: "termogenico",
-        price: 99.90,
+        price: 79.90,
         image: "assets/termogenico/2hot-max-200g.png",
         description: "Descrição provisória. Altere depois.",
         benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
@@ -312,9 +312,9 @@ const PRODUCTS = [
     {
         id: 26,
         name: "Dimethylex 60caps",
-        brand: "Marca",
+        brand: "Under Labz",
         category: "termogenico",
-        price: 99.90,
+        price: 89.90,
         image: "assets/termogenico/dimethylex-60caps.png",
         description: "Descrição provisória. Altere depois.",
         benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
@@ -324,9 +324,9 @@ const PRODUCTS = [
     {
         id: 27,
         name: "Psicho Killer 60caps",
-        brand: "Marca",
+        brand: "Demons Labs",
         category: "termogenico",
-        price: 99.90,
+        price: 89.90,
         image: "assets/termogenico/psicho-killer-60caps.png",
         description: "Descrição provisória. Altere depois.",
         benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
@@ -336,9 +336,9 @@ const PRODUCTS = [
     {
         id: 28,
         name: "Multivit Dux 90caps",
-        brand: "Marca",
+        brand: "Dux",
         category: "vitaminas e omega 3",
-        price: 99.90,
+        price: 79.90,
         image: "assets/vitaminas e omega 3/multivit-dux-90caps.png",
         description: "Descrição provisória. Altere depois.",
         benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
@@ -348,9 +348,9 @@ const PRODUCTS = [
     {
         id: 29,
         name: "Omega3 Dux 120caps",
-        brand: "Marca",
+        brand: "Dux",
         category: "vitaminas e omega 3",
-        price: 99.90,
+        price: 79.90,
         image: "assets/vitaminas e omega 3/omega3-dux-120caps.png",
         description: "Descrição provisória. Altere depois.",
         benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
@@ -360,9 +360,9 @@ const PRODUCTS = [
     {
         id: 30,
         name: "Carnibol 900g",
-        brand: "Marca",
+        brand: "Darkness",
         category: "whey-iso",
-        price: 99.90,
+        price: 169.90,
         image: "assets/whey-iso/carnibol-900g.png",
         description: "Descrição provisória. Altere depois.",
         benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
@@ -372,9 +372,9 @@ const PRODUCTS = [
     {
         id: 31,
         name: "Iso Dux 900g",
-        brand: "Marca",
+        brand: "Dux",
         category: "whey-iso",
-        price: 99.90,
+        price: 329.90,
         image: "assets/whey-iso/iso-dux-900g.png",
         description: "Descrição provisória. Altere depois.",
         benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
@@ -384,9 +384,9 @@ const PRODUCTS = [
     {
         id: 32,
         name: "Isolate Prime 900g",
-        brand: "Marca",
+        brand: "Bodyaction",
         category: "whey-iso",
-        price: 99.90,
+        price: 169.90,
         image: "assets/whey-iso/isolate-prime-900g.png",
         description: "Descrição provisória. Altere depois.",
         benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
@@ -395,10 +395,10 @@ const PRODUCTS = [
     },
     {
         id: 33,
-        name: "Whey Fhealt 2kg",
-        brand: "Marca",
+        name: "Whey Full Health 2kg",
+        brand: "Full Health",
         category: "whey-protein",
-        price: 99.90,
+        price: 159.90,
         image: "assets/whey-protein/whey-fhealt-2kg.png",
         description: "Descrição provisória. Altere depois.",
         benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
@@ -407,10 +407,10 @@ const PRODUCTS = [
     },
     {
         id: 34,
-        name: "Whey Health 2kg",
-        brand: "Marca",
+        name: "Whey Health Time 2,1kg",
+        brand: "Health Time",
         category: "whey-protein",
-        price: 99.90,
+        price: 169.90,
         image: "assets/whey-protein/whey-health-2kg.png",
         description: "Descrição provisória. Altere depois.",
         benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
@@ -420,9 +420,9 @@ const PRODUCTS = [
     {
         id: 35,
         name: "Whey Melius 2kg",
-        brand: "Marca",
+        brand: "Melius",
         category: "whey-protein",
-        price: 99.90,
+        price: 139.90,
         image: "assets/whey-protein/whey-melius-2kg.png",
         description: "Descrição provisória. Altere depois.",
         benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
