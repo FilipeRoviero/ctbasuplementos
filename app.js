@@ -28,8 +28,8 @@ const PRODUCTS = [
         category: "barrinhas",
         price: 109.00,
         image: "assets/barrinhas/barra-darkbar.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+        description: "A barra de proteína é uma opção prática e deliciosa para aumentar a ingestão de proteínas em sua dieta.",
+        benefits: ["Carboidratos de baixo índice glicêmico", "TCM", "Vitaminas e minerais"
 
         ]
     },
@@ -40,8 +40,8 @@ const PRODUCTS = [
         category: "barrinhas",
         price: 99.90,
         image: "assets/barrinhas/barra-integral.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+        description: "A barra de proteína é uma opção prática e deliciosa para aumentar a ingestão de proteínas em sua dieta.",
+        benefits: ["Carboidratos de baixo índice glicêmico", "TCM", "Vitaminas e minerais"
 
         ]
     },
@@ -52,8 +52,8 @@ const PRODUCTS = [
         category: "barrinhas",
         price: 89.90,
         image: "assets/barrinhas/barra-nutrata.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
+        description: "A barra de proteína é uma opção prática e deliciosa para aumentar a ingestão de proteínas em sua dieta.",
+        benefits: ["Carboidratos de baixo índice glicêmico", "TCM", "Vitaminas e minerais"
 
         ]
     },
