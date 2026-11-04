@@ -1,611 +1,268 @@
 /* ==========================================================================
-   CTBA SUPLEMENTOS - Lógica de Aplicação & E-commerce WhatsApp
+   CTBA SUPLEMENTOS - Lógica de Aplicação & Pedido via WhatsApp
+   Os dados (STORE_CONFIG, CATEGORIES, PRODUCTS) ficam em produtos.js.
+   Este script é usado por index.html (somente kits) e catalogo.html (todos).
    ========================================================================== */
 
-// Configuração Geral da Loja
-const STORE_CONFIG = {
-    whatsappNumber: "554191331314", // Alterar para o número do WhatsApp da loja (com DDD)
-};
+const PAGE = document.body.dataset.page; // "home" ou "catalogo"
 
-// Banco de Dados de Produtos Mock
-const PRODUCTS = [
-    {
-        id: 1,
-        name: "Beta Alanina Muscletech 200g",
-        brand: "Muscletech",
-        category: "aminoacidos",
-        price: 79.90,
-        image: "assets/aminoacidos/beta-alanina-muscletech-200g.png",
-        description: "Seu limite é o próximo nível. Com Beta Alanina Muscletech, você treina mais forte, aguenta mais e recupera melhor. Pura performance para quem não aceita estagnação.",
-        benefits: ["Aumento de força", "Recuperação mais rápida", "Performance melhor"
-
-        ]
-    },
-    {
-        id: 2,
-        name: "Barra Darkbar com 08 unidades",
-        brand: "Darkbar",
-        category: "barrinhas",
-        price: 109.00,
-        image: "assets/barrinhas/barra-darkbar.png",
-        description: "A barra de proteína é uma opção prática e deliciosa para aumentar a ingestão de proteínas em sua dieta.",
-        benefits: ["Carboidratos de baixo índice glicêmico", "TCM", "Vitaminas e minerais"
-
-        ]
-    },
-    {
-        id: 3,
-        name: "Barra Integral caixa com 12",
-        brand: "Integral",
-        category: "barrinhas",
-        price: 99.90,
-        image: "assets/barrinhas/barra-integral.png",
-        description: "A barra de proteína é uma opção prática e deliciosa para aumentar a ingestão de proteínas em sua dieta.",
-        benefits: ["Carboidratos de baixo índice glicêmico", "TCM", "Vitaminas e minerais"
-
-        ]
-    },
-    {
-        id: 4,
-        name: "Barra Nutrata caixa com 12",
-        brand: "Marca",
-        category: "barrinhas",
-        price: 89.90,
-        image: "assets/barrinhas/barra-nutrata.png",
-        description: "A barra de proteína é uma opção prática e deliciosa para aumentar a ingestão de proteínas em sua dieta.",
-        benefits: ["Carboidratos de baixo índice glicêmico", "TCM", "Vitaminas e minerais"
-
-        ]
-    },
-    {
-        id: 5,
-        name: "Combo Integral Whey 900g + Creatina 300g",
-        brand: "Integral",
-        category: "combos",
-        price: 229.90,
-        image: "assets/combos/combo-integral-whey-creat.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
-
-        ]
-    },
-    {
-        id: 6,
-        name: "Combo Whey HealthTime 2,1kg + Creatina Dux 300g",
-        brand: "HealthTime + Dux",
-        category: "combos",
-        price: 239.90,
-        image: "assets/combos/combo-whey-creat.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
-
-        ]
-    },
-    {
-        id: 7,
-        name: "Combo Whey HealthTime 2,1kg + Shaker",
-        brand: "HealthTime + Shaker",
-        category: "combos",
-        price: 149.90,
-        image: "assets/combos/combo-whey-shaker.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
-
-        ]
-    },
-    {
-        id: 8,
-        name: "Creatina Dux 300g",
-        brand: "Dux",
-        category: "creatina",
-        price: 69.90,
-        image: "assets/creatina/creatina-dux-300g.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
-
-        ]
-    },
-    {
-        id: 9,
-        name: "Creatina Integral 300g",
-        brand: "Integral",
-        category: "creatina",
-        price: 79.90,
-        image: "assets/creatina/creatina-integral-300g.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
-
-        ]
-    },
-    {
-        id: 10,
-        name: "Creatina Max Titanium 300g",
-        brand: "Max Titanium",
-        category: "creatina",
-        price: 69.90,
-        image: "assets/creatina/creatina-max-300g.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
-
-        ]
-    },
-    {
-        id: 11,
-        name: "Hipercalórico Sem Lactose Max Titanium 2kg",
-        brand: "Max Titanium",
-        category: "hiper-sem-lac",
-        price: 109.90,
-        image: "assets/hiper-sem-lac/hiper-sem-lactose-2kg.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
-
-        ]
-    },
-    {
-        id: 12,
-        name: "Hipercalórico X Charge 3kg",
-        brand: "Charge",
-        category: "hipercalorico",
-        price: 99.90,
-        image: "assets/hipercalorico/hiper-charge-3kg.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
-
-        ]
-    },
-    {
-        id: 13,
-        name: "Hipercalórico Creamass 3kg",
-        brand: "Integral",
-        category: "hipercalorico",
-        price: 119.90,
-        image: "assets/hipercalorico/hiper-integral-3kg.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
-
-        ]
-    },
-    {
-        id: 14,
-        name: "Hipercalórico Mass Titanium 3kg",
-        brand: "Max",
-        category: "hipercalorico",
-        price: 119.90,
-        image: "assets/hipercalorico/hiper-max-3kg.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
-
-        ]
-    },
-    {
-        id: 15,
-        name: "Dr. Peanut 600g",
-        brand: "Dr Peanut",
-        category: "pasta-de-amendoim",
-        price: 49.90,
-        image: "assets/pasta-de-amendoim/drpeanut-600g.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
-
-        ]
-    },
-    {
-        id: 16,
-        name: "La Ganexa 1kg",
-        brand: "La Ganexa",
-        category: "pasta-de-amendoim",
-        price: 69.90,
-        image: "assets/pasta-de-amendoim/laganexa-1kg.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
-
-        ]
-    },
-    {
-        id: 17,
-        name: "La Ganexa 450g",
-        brand: "La Ganexa",
-        category: "pasta-de-amendoim",
-        price: 44.90,
-        image: "assets/pasta-de-amendoim/laganexa-450g.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
-
-        ]
-    },
-    {
-        id: 18,
-        name: "Dila Pump 300g",
-        brand: "Adaptogen",
-        category: "pre-sem-cafeina",
-        price: 129.90,
-        image: "assets/pre-sem-cafeina/dila-pump-300g.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
-
-        ]
-    },
-    {
-        id: 19,
-        name: "Pre Night 200g",
-        brand: "Bodyaction",
-        category: "pre-sem-cafeina",
-        price: 89.90,
-        image: "assets/pre-sem-cafeina/pre-night-200g.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
-
-        ]
-    },
-    {
-        id: 20,
-        name: "Vasculos 300g",
-        brand: "Darkness",
-        category: "pre-sem-cafeina",
-        price: 119.90,
-        image: "assets/pre-sem-cafeina/vasculos-300g.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
-
-        ]
-    },
-    {
-        id: 21,
-        name: "Pre Bope 150g",
-        brand: "Black Skull",
-        category: "pre-treino",
-        price: 79.90,
-        image: "assets/pre-treino/pre-bope-150g.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
-
-        ]
-    },
-    {
-        id: 22,
-        name: "Insane Clown 350g",
-        brand: "Demons Labs",
-        category: "pre-treino",
-        price: 129.90,
-        image: "assets/pre-treino/pre-clown-350g.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
-
-        ]
-    },
-    {
-        id: 23,
-        name: "Pre Psicho Killer 294g",
-        brand: "Demons Labs",
-        category: "pre-treino",
-        price: 129.90,
-        image: "assets/pre-treino/pre-psicho-killer-294g.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
-
-        ]
-    },
-    {
-        id: 24,
-        name: "Energy Kick 1kg",
-        brand: "Dux",
-        category: "repositores",
-        price: 129.90,
-        image: "assets/repositores/energy-kick-1kg.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
-
-        ]
-    },
-    {
-        id: 25,
-        name: "Thermo 2Hot Max 200g",
-        brand: "Max Titanium",
-        category: "termogenico",
-        price: 79.90,
-        image: "assets/termogenico/2hot-max-200g.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
-
-        ]
-    },
-    {
-        id: 26,
-        name: "Dimethylex 60caps",
-        brand: "Under Labz",
-        category: "termogenico",
-        price: 89.90,
-        image: "assets/termogenico/dimethylex-60caps.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
-
-        ]
-    },
-    {
-        id: 27,
-        name: "Psicho Killer 60caps",
-        brand: "Demons Labs",
-        category: "termogenico",
-        price: 89.90,
-        image: "assets/termogenico/psicho-killer-60caps.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
-
-        ]
-    },
-    {
-        id: 28,
-        name: "Multivit Dux 90caps",
-        brand: "Dux",
-        category: "vitaminas e omega 3",
-        price: 79.90,
-        image: "assets/vitaminas e omega 3/multivit-dux-90caps.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
-
-        ]
-    },
-    {
-        id: 29,
-        name: "Omega3 Dux 120caps",
-        brand: "Dux",
-        category: "vitaminas e omega 3",
-        price: 79.90,
-        image: "assets/vitaminas e omega 3/omega3-dux-120caps.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
-
-        ]
-    },
-    {
-        id: 30,
-        name: "Carnibol 900g",
-        brand: "Darkness",
-        category: "whey-iso",
-        price: 169.90,
-        image: "assets/whey-iso/carnibol-900g.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
-
-        ]
-    },
-    {
-        id: 31,
-        name: "Iso Dux 900g",
-        brand: "Dux",
-        category: "whey-iso",
-        price: 329.90,
-        image: "assets/whey-iso/iso-dux-900g.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
-
-        ]
-    },
-    {
-        id: 32,
-        name: "Isolate Prime 900g",
-        brand: "Bodyaction",
-        category: "whey-iso",
-        price: 169.90,
-        image: "assets/whey-iso/isolate-prime-900g.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
-
-        ]
-    },
-    {
-        id: 33,
-        name: "Whey Full Health 2kg",
-        brand: "Full Health",
-        category: "whey-protein",
-        price: 159.90,
-        image: "assets/whey-protein/whey-fhealt-2kg.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
-
-        ]
-    },
-    {
-        id: 34,
-        name: "Whey Health Time 2,1kg",
-        brand: "Health Time",
-        category: "whey-protein",
-        price: 169.90,
-        image: "assets/whey-protein/whey-health-2kg.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
-
-        ]
-    },
-    {
-        id: 35,
-        name: "Whey Melius 2kg",
-        brand: "Melius",
-        category: "whey-protein",
-        price: 139.90,
-        image: "assets/whey-protein/whey-melius-2kg.png",
-        description: "Descrição provisória. Altere depois.",
-        benefits: ["Benefício 1", "Benefício 2", "Benefício 3"
-
-        ]
-    },
-
-];
-
-// Estado da Aplicação
-let cart = [];
+// Estado do catálogo
 let currentCategory = "todos";
 let searchQuery = "";
-let displayLimit = 8; // Limit for 'todos'
+let displayLimit = 8; // Limite inicial para "todos" sem busca
 
 // Elementos do DOM
 const productsGrid = document.getElementById("products-grid");
 const loadMoreContainer = document.getElementById("load-more-container");
 const loadMoreBtn = document.getElementById("load-more-btn");
-const filterButtons = document.querySelectorAll(".filter-btn");
+const categoryFilters = document.getElementById("category-filters");
 const searchInputDesktop = document.getElementById("search-input-desktop");
 const searchInputMobile = document.getElementById("search-input-mobile");
 const searchStatus = document.getElementById("search-status");
 const searchQueryDisplay = document.getElementById("search-query-display");
 const clearSearchBtn = document.getElementById("clear-search-btn");
+const menuToggle = document.getElementById("menu-toggle");
+const mainNav = document.getElementById("main-nav");
 
-const cartToggleBtn = document.getElementById("cart-toggle-btn");
-const cartCloseBtn = document.getElementById("cart-close-btn");
-const cartDrawer = document.getElementById("cart-drawer");
-const cartOverlay = document.getElementById("cart-overlay");
-const cartItemsContainer = document.getElementById("cart-items");
-const cartBadge = document.getElementById("cart-badge");
-const cartSubtotal = document.getElementById("cart-subtotal");
-const pixDiscountRow = document.getElementById("pix-discount-row");
-const cartDiscount = document.getElementById("cart-discount");
-const cartTotal = document.getElementById("cart-total");
-const whatsappCheckoutBtn = document.getElementById("whatsapp-checkout-btn");
+const WHATSAPP_ICON = `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.965C16.59 2.01 14.12 1.01 11.5 1.012c-5.443 0-9.869 4.371-9.873 9.802-.001 1.777.476 3.51 1.38 5.061L1.96 22.04l6.27-1.626c-.523-.314.417.252-1.583-.92zm11.19-6.315c-.3-.15-1.77-.875-2.045-.975-.275-.1-.475-.15-.675.15-.2.3-.775.975-.95 1.175-.175.2-.35.225-.65.075-.3-.15-1.265-.467-2.41-1.485-.89-.795-1.49-1.77-1.665-2.07-.175-.3-.02-.46.13-.61.135-.133.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.675-1.625-.925-2.225-.244-.589-.491-.51-.675-.52-.175-.01-.375-.01-.575-.01-.2 0-.525.075-.8 0-.275-.3-.8-1.725-1.1-2.025s-.6-.225-.9-.075c-.3.15-1.77.875-2.045.975-.275.1-.475.15-.675.15-.2.3-.775.975-.95 1.175-.175.2-.35.225-.65.075z"/></svg>`;
 
-const productModal = document.getElementById("product-modal");
-const modalOverlay = document.getElementById("modal-overlay");
-const modalCloseBtn = document.getElementById("modal-close-btn");
-const modalBodyContent = document.getElementById("modal-body-content");
+// ==========================================================================
+// Utilitários
+// ==========================================================================
+function escapeHtml(text) {
+    return String(text ?? "").replace(/[&<>"']/g, ch => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+    }[ch]));
+}
 
-const footerCatLinks = document.querySelectorAll(".cat-link");
+// 159.9 -> "R$ 159,90"
+function formatPrice(value) {
+    return "R$ " + value.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+// Minúsculas e sem acentos, para a busca achar "pre treino" em "Pré-treino"
+function normalizeText(text) {
+    return String(text ?? "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
+// Produtos com price: null ficam ocultos até o preço ser confirmado
+function getAvailableProducts() {
+    return PRODUCTS.filter(prod => typeof prod.price === "number");
+}
+
+// Link do WhatsApp com mensagem pré-preenchida (nome + preço)
+function buildWhatsAppUrl(prod) {
+    const message = `Olá! Gostaria de pedir o produto *${prod.name}* por ${formatPrice(prod.price)}. Pode me ajudar?`;
+    return `https://wa.me/${STORE_CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
+}
 
 // ==========================================================================
 // Inicialização
 // ==========================================================================
 document.addEventListener("DOMContentLoaded", () => {
-    loadCartFromLocalStorage();
-    renderProducts();
-    setupEventListeners();
-    updateCartUI();
+    setupMenu();
+    setupSearch();
+
+    if (PAGE === "catalogo") {
+        setupCatalog();
+    } else {
+        renderProducts(getAvailableProducts().filter(prod => prod.category === STORE_CONFIG.homeCategory));
+    }
 });
 
 // ==========================================================================
-// Event Listeners Setup
+// Menu de navegação (hambúrguer no celular)
 // ==========================================================================
-function setupEventListeners() {
-    if (loadMoreBtn) {
-        loadMoreBtn.addEventListener("click", () => {
-            displayLimit = Infinity;
-            renderProducts();
-        });
-    }
+function setupMenu() {
+    if (!menuToggle || !mainNav) return;
 
-    // Filtros por categoria
-    filterButtons.forEach(btn => {
-        btn.addEventListener("click", (e) => {
-            filterButtons.forEach(b => b.classList.remove("active"));
-            btn.classList.add("active");
-            currentCategory = btn.dataset.category;
-            displayLimit = 8;
-            renderProducts();
-        });
-    });
-
-    // Links de categoria do rodapé
-    footerCatLinks.forEach(link => {
-        link.addEventListener("click", (e) => {
-            const cat = link.dataset.cat;
-            const correspondingBtn = document.querySelector(`.filter-btn[data-category="${cat}"]`);
-            if (correspondingBtn) {
-                correspondingBtn.click();
-            }
-        });
-    });
-
-    // Busca de texto (Desktop e Mobile)
-    const handleSearch = (e) => {
-        searchQuery = e.target.value.toLowerCase().trim();
-        displayLimit = 8;
-
-        // Sincroniza campos de busca
-        if (e.target === searchInputDesktop) {
-            searchInputMobile.value = e.target.value;
-        } else {
-            searchInputDesktop.value = e.target.value;
-        }
-
-        if (searchQuery.length > 0) {
-            searchStatus.classList.remove("hidden");
-            searchQueryDisplay.textContent = e.target.value;
-        } else {
-            searchStatus.classList.add("hidden");
-        }
-        renderProducts();
+    const setMenu = (open) => {
+        mainNav.classList.toggle("open", open);
+        menuToggle.classList.toggle("open", open);
+        menuToggle.setAttribute("aria-expanded", String(open));
+        menuToggle.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
     };
 
-    searchInputDesktop.addEventListener("input", handleSearch);
-    searchInputMobile.addEventListener("input", handleSearch);
-
-    // Limpar filtros de busca
-    clearSearchBtn.addEventListener("click", () => {
-        searchQuery = "";
-        displayLimit = 8;
-        searchInputDesktop.value = "";
-        searchInputMobile.value = "";
-        searchStatus.classList.add("hidden");
-        renderProducts();
+    menuToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        setMenu(!mainNav.classList.contains("open"));
     });
 
-    // Carrinho Drawer Toggle
-    cartToggleBtn.addEventListener("click", openCart);
-    cartCloseBtn.addEventListener("click", closeCart);
-    cartOverlay.addEventListener("click", closeCart);
-
-    // Links de fechar carrinho no drawer
+    // Fecha ao tocar num link, fora do menu ou com ESC
+    mainNav.addEventListener("click", (e) => {
+        if (e.target.closest("a")) setMenu(false);
+    });
     document.addEventListener("click", (e) => {
-        if (e.target.classList.contains("close-cart-link")) {
-            closeCart();
-        }
+        if (!mainNav.contains(e.target)) setMenu(false);
     });
-
-    // Modal Close
-    modalCloseBtn.addEventListener("click", closeModal);
-    modalOverlay.addEventListener("click", closeModal);
-
-    // Fechar com tecla ESC
     document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-            closeCart();
-            closeModal();
-        }
+        if (e.key === "Escape") setMenu(false);
     });
-
-    // Checkout via WhatsApp
-    whatsappCheckoutBtn.addEventListener("click", sendCartToWhatsApp);
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 768) setMenu(false);
+    });
 }
 
 // ==========================================================================
-// Renderização de Produtos
+// Busca (no catálogo filtra na hora; na home leva ao catálogo)
 // ==========================================================================
-function renderProducts() {
-    productsGrid.innerHTML = "";
+function setupSearch() {
+    const inputs = [searchInputDesktop, searchInputMobile].filter(Boolean);
 
-    // Filtragem baseada na categoria e na barra de pesquisa
-    const filteredProducts = PRODUCTS.filter(prod => {
+    inputs.forEach(input => {
+        if (PAGE === "catalogo") {
+            input.addEventListener("input", () => {
+                setSearch(input.value);
+            });
+        } else {
+            input.addEventListener("keydown", (e) => {
+                if (e.key === "Enter") goToCatalogSearch(input.value);
+            });
+        }
+    });
+
+    // Botão da lupa
+    document.querySelectorAll(".search-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const input = btn.parentElement.querySelector("input");
+            if (!input) return;
+            if (PAGE === "catalogo") input.focus();
+            else goToCatalogSearch(input.value);
+        });
+    });
+
+    if (clearSearchBtn) {
+        clearSearchBtn.addEventListener("click", () => {
+            inputs.forEach(input => { input.value = ""; });
+            setSearch("");
+        });
+    }
+}
+
+function goToCatalogSearch(value) {
+    const term = value.trim();
+    window.location.href = term ? `catalogo.html?busca=${encodeURIComponent(term)}` : "catalogo.html";
+}
+
+function setSearch(rawValue) {
+    searchQuery = normalizeText(rawValue).trim();
+    displayLimit = 8;
+
+    // Sincroniza os dois campos de busca (desktop e celular)
+    [searchInputDesktop, searchInputMobile].forEach(input => {
+        if (input && input.value !== rawValue) input.value = rawValue;
+    });
+
+    if (searchQuery.length > 0) {
+        searchStatus.classList.remove("hidden");
+        searchQueryDisplay.textContent = rawValue.trim();
+    } else {
+        searchStatus.classList.add("hidden");
+    }
+    updateUrl();
+    renderCatalog();
+}
+
+// ==========================================================================
+// Catálogo completo (catalogo.html)
+// ==========================================================================
+function setupCatalog() {
+    const params = new URLSearchParams(window.location.search);
+    const available = getAvailableProducts();
+
+    // Só mostra filtro de categorias que têm produto disponível
+    const activeCategories = CATEGORIES.filter(cat => available.some(prod => prod.category === cat.id));
+
+    categoryFilters.innerHTML = "";
+    [{ id: "todos", label: "Todos" }, ...activeCategories].forEach(cat => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "filter-btn";
+        btn.dataset.category = cat.id;
+        btn.textContent = cat.label;
+        btn.addEventListener("click", () => {
+            currentCategory = cat.id;
+            displayLimit = 8;
+            updateFilterButtons();
+            updateUrl();
+            renderCatalog();
+        });
+        categoryFilters.appendChild(btn);
+    });
+
+    // Estado inicial vindo do link (?categoria=combos&busca=whey)
+    const catParam = params.get("categoria");
+    if (catParam && activeCategories.some(cat => cat.id === catParam)) currentCategory = catParam;
+
+    const searchParam = params.get("busca") || "";
+    if (searchParam) {
+        [searchInputDesktop, searchInputMobile].forEach(input => { if (input) input.value = searchParam; });
+        searchQuery = normalizeText(searchParam).trim();
+        searchStatus.classList.remove("hidden");
+        searchQueryDisplay.textContent = searchParam.trim();
+    }
+
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener("click", () => {
+            displayLimit = Infinity;
+            renderCatalog();
+        });
+    }
+
+    updateFilterButtons();
+    renderCatalog();
+}
+
+function updateFilterButtons() {
+    categoryFilters.querySelectorAll(".filter-btn").forEach(btn => {
+        const isActive = btn.dataset.category === currentCategory;
+        btn.classList.toggle("active", isActive);
+        btn.setAttribute("aria-pressed", String(isActive));
+        // No celular a barra de filtros rola na horizontal: mantém o botão ativo à vista
+        if (isActive && categoryFilters.scrollWidth > categoryFilters.clientWidth) {
+            categoryFilters.scrollTo({ left: btn.offsetLeft - 16, behavior: "smooth" });
+        }
+    });
+}
+
+// Mantém o filtro no endereço (permite compartilhar o link e usar "voltar")
+function updateUrl() {
+    const params = new URLSearchParams();
+    if (currentCategory !== "todos") params.set("categoria", currentCategory);
+    const rawSearch = (searchInputDesktop && searchInputDesktop.value.trim()) ||
+                      (searchInputMobile && searchInputMobile.value.trim()) || "";
+    if (searchQuery && rawSearch) params.set("busca", rawSearch);
+    const query = params.toString();
+    history.replaceState(null, "", window.location.pathname + (query ? "?" + query : ""));
+}
+
+function renderCatalog() {
+    const filtered = getAvailableProducts().filter(prod => {
         const matchesCategory = currentCategory === "todos" || prod.category === currentCategory;
         const matchesSearch = searchQuery === "" ||
-            prod.name.toLowerCase().includes(searchQuery) ||
-            prod.brand.toLowerCase().includes(searchQuery) ||
-            prod.description.toLowerCase().includes(searchQuery);
+            normalizeText(prod.name).includes(searchQuery) ||
+            normalizeText(prod.brand).includes(searchQuery) ||
+            normalizeText(prod.description).includes(searchQuery);
         return matchesCategory && matchesSearch;
     });
 
-    let productsToRender = filteredProducts;
+    let toRender = filtered;
+    const limited = currentCategory === "todos" && searchQuery === "";
+    if (limited) toRender = filtered.slice(0, displayLimit);
 
-    if (currentCategory === "todos" && searchQuery === "") {
-        productsToRender = filteredProducts.slice(0, displayLimit);
-
-        if (filteredProducts.length > displayLimit) {
-            loadMoreContainer.classList.remove("hidden");
-        } else {
-            loadMoreContainer.classList.add("hidden");
-        }
-    } else {
-        if (loadMoreContainer) {
-            loadMoreContainer.classList.add("hidden");
-        }
+    if (loadMoreContainer) {
+        loadMoreContainer.classList.toggle("hidden", !(limited && filtered.length > displayLimit));
     }
+    renderProducts(toRender);
+}
 
-    if (productsToRender.length === 0) {
+// ==========================================================================
+// Renderização de Produtos (cards)
+// ==========================================================================
+function renderProducts(list) {
+    productsGrid.innerHTML = "";
+
+    if (list.length === 0) {
         productsGrid.innerHTML = `
             <div class="loading-products">
                 <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-muted);"><circle cx="12" cy="12" r="10"></circle><line x1="8" y1="12" x2="16" y2="12"></line></svg>
@@ -615,327 +272,49 @@ function renderProducts() {
         return;
     }
 
-    productsToRender.forEach(prod => {
-        const hasDiscount = prod.originalPrice && prod.originalPrice > prod.price;
-        const card = document.createElement("div");
-        card.className = "product-card";
-
-        card.innerHTML = `
-            ${hasDiscount ? `<span class="product-badge">🔥 OFERTA</span>` : ''}
-            <span class="product-brand">${prod.brand}</span>
-            <div class="product-image-container" onclick="openProductQuickView(${prod.id})">
-                <img src="${prod.image}" alt="${prod.name}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1593095948071-474c5cc2989d?q=80&w=600&auto=format&fit=crop'">
-            </div>
-            <div class="product-details">
-                <h3 class="product-title" onclick="openProductQuickView(${prod.id})">${prod.name}</h3>
-                <p class="product-description">${prod.description}</p>
-                <div class="product-price-box">
-                    ${hasDiscount ? `<span class="old-price">R$ ${prod.originalPrice.toFixed(2)}</span>` : ''}
-                    <span class="current-price">R$ ${prod.price.toFixed(2)}</span>
-                </div>
-                <div class="product-actions">
-                    <button class="btn btn-primary" onclick="buyNowSingle(${prod.id})">
-                        COMPRAR AGORA
-                    </button>
-                    <button class="btn-add-cart" aria-label="Adicionar ao carrinho" onclick="addToCart(${prod.id})">
-                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-                    </button>
-                </div>
-            </div>
-        `;
-
-        productsGrid.appendChild(card);
-    });
+    list.forEach(prod => productsGrid.appendChild(createProductCard(prod)));
 }
 
-// ==========================================================================
-// Gerenciamento do Carrinho
-// ==========================================================================
-function addToCart(productId) {
-    const product = PRODUCTS.find(p => p.id === productId);
-    if (!product) return;
-
-    const existingItem = cart.find(item => item.product.id === productId);
-    if (existingItem) {
-        existingItem.quantity++;
-    } else {
-        cart.push({
-            product: product,
-            quantity: 1
-        });
-    }
-
-    saveCartToLocalStorage();
-    updateCartUI();
-    openCart();
-
-    // Animação temporária no ícone do carrinho
-    cartToggleBtn.style.transform = "scale(1.15)";
-    setTimeout(() => {
-        cartToggleBtn.style.transform = "none";
-    }, 200);
-}
-
-function removeFromCart(productId) {
-    cart = cart.filter(item => item.product.id !== productId);
-    saveCartToLocalStorage();
-    updateCartUI();
-}
-
-function updateQuantity(productId, delta) {
-    const item = cart.find(item => item.product.id === productId);
-    if (!item) return;
-
-    item.quantity += delta;
-    if (item.quantity <= 0) {
-        removeFromCart(productId);
-    } else {
-        saveCartToLocalStorage();
-        updateCartUI();
-    }
-}
-
-function openCart() {
-    cartDrawer.classList.add("active");
-    document.body.style.overflow = "hidden"; // impede scroll de fundo
-}
-
-function closeCart() {
-    cartDrawer.classList.remove("active");
-    document.body.style.overflow = "";
-}
-
-function updateCartUI() {
-    // Quantidade total de itens
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    cartBadge.textContent = totalItems;
-
-    if (totalItems === 0) {
-        cartBadge.classList.add("hidden");
-    } else {
-        cartBadge.classList.remove("hidden");
-    }
-
-    // Listagem dos itens
-    cartItemsContainer.innerHTML = "";
-
-    if (cart.length === 0) {
-        cartItemsContainer.innerHTML = `
-            <div class="cart-empty-message">
-                <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-muted);"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-                <p>Seu carrinho de compras está vazio.</p>
-                <a href="#catalogo" class="btn btn-primary btn-sm close-cart-link">Ver Catálogo</a>
-            </div>
-        `;
-
-        cartSubtotal.textContent = "R$ 0,00";
-        pixDiscountRow.classList.add("hidden");
-        cartTotal.textContent = "R$ 0,00";
-        whatsappCheckoutBtn.disabled = true;
-        return;
-    }
-
-    // Calcula Preços
-    // Preço no cartão seria o valor sem o desconto Pix.
-    // Como os produtos já vêm com preço promocional Pix nas variáveis,
-    // o preço integral de tabela (Cartão) é calculado a partir do originalPrice
-    // ou dividindo o preço promocional Pix para recriar o preço base.
-    let baseCartaoSubtotal = 0;
-
-    cart.forEach(item => {
-        const itemOriginalPrice = item.product.originalPrice || (item.product.price / (1 - STORE_CONFIG.pixDiscount));
-        baseCartaoSubtotal += itemOriginalPrice * item.quantity;
-
-        const cartItemEl = document.createElement("div");
-        cartItemEl.className = "cart-item";
-
-        cartItemEl.innerHTML = `
-            <div class="cart-item-img">
-                <img src="${item.product.image}" alt="${item.product.name}" onerror="this.src='https://images.unsplash.com/photo-1593095948071-474c5cc2989d?q=80&w=600&auto=format&fit=crop'">
-            </div>
-            <div class="cart-item-info">
-                <h4 class="cart-item-title">${item.product.name}</h4>
-                <span class="cart-item-brand">${item.product.brand}</span>
-                <span class="cart-item-price">R$ ${item.product.price.toFixed(2)} <small style="font-size:10px; color:var(--text-secondary);">un (Pix)</small></span>
-                
-                <div class="cart-item-actions">
-                    <div class="quantity-control">
-                        <button class="qty-btn" onclick="updateQuantity(${item.product.id}, -1)">-</button>
-                        <span class="qty-value">${item.quantity}</span>
-                        <button class="qty-btn" onclick="updateQuantity(${item.product.id}, 1)">+</button>
-                    </div>
-                    <button class="btn-remove-item" onclick="removeFromCart(${item.product.id})">
-                        <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
-                        Remover
-                    </button>
-                </div>
-            </div>
-        `;
-
-        cartItemsContainer.appendChild(cartItemEl);
-    });
-
-    const discountAmount = baseCartaoSubtotal * STORE_CONFIG.pixDiscount;
-    const totalPix = baseCartaoSubtotal - discountAmount;
-
-    cartSubtotal.textContent = `R$ ${baseCartaoSubtotal.toFixed(2)}`;
-    pixDiscountRow.classList.remove("hidden");
-    cartDiscount.textContent = `- R$ ${discountAmount.toFixed(2)}`;
-    cartTotal.textContent = `R$ ${totalPix.toFixed(2)}`;
-    whatsappCheckoutBtn.disabled = false;
-}
-
-// Persistência local
-function saveCartToLocalStorage() {
-    localStorage.setItem("ctba_sups_cart", JSON.stringify(cart));
-}
-
-function loadCartFromLocalStorage() {
-    const local = localStorage.getItem("ctba_sups_cart");
-    if (local) {
-        try {
-            cart = JSON.parse(local);
-        } catch (e) {
-            cart = [];
-        }
-    }
-}
-
-// ==========================================================================
-// Quick View Modal do Produto
-// ==========================================================================
-function openProductQuickView(productId) {
-    const prod = PRODUCTS.find(p => p.id === productId);
-    if (!prod) return;
-
+function createProductCard(prod) {
     const hasDiscount = prod.originalPrice && prod.originalPrice > prod.price;
-    const cartaoPrice = prod.originalPrice || (prod.price / (1 - STORE_CONFIG.pixDiscount));
+    const card = document.createElement("article");
+    card.className = "product-card";
 
-    // Monta a Tabela Nutricional
-    let nutRows = "";
-    for (const [key, val] of Object.entries(prod.nutritional)) {
-        nutRows += `
-            <div class="table-row">
-                <span>${key}</span>
-                <span>${val}</span>
+    const image = prod.image
+        ? `<img src="${escapeHtml(prod.image)}" alt="${escapeHtml(prod.name)}" loading="lazy" onerror="this.replaceWith(createImagePlaceholder())">`
+        : `<div class="image-placeholder">Foto em breve</div>`;
+
+    card.innerHTML = `
+        ${hasDiscount ? `<span class="product-badge">🔥 OFERTA</span>` : ""}
+        ${prod.brand ? `<span class="product-brand">${escapeHtml(prod.brand)}</span>` : ""}
+        <div class="product-image-container">${image}</div>
+        <div class="product-details">
+            <h3 class="product-title">${escapeHtml(prod.name)}</h3>
+            ${prod.description ? `<p class="product-description" title="Toque para ver a descrição completa">${escapeHtml(prod.description)}</p>` : ""}
+            <div class="product-price-box">
+                ${hasDiscount ? `<span class="old-price">${formatPrice(prod.originalPrice)}</span>` : ""}
+                <span class="current-price">${formatPrice(prod.price)}</span>
             </div>
-        `;
-    }
-
-    // Monta os benefícios em Bullet Points
-    let benefitsList = "";
-    prod.benefits.forEach(benefit => {
-        benefitsList += `<li>💪 ${benefit}</li>`;
-    });
-
-    modalBodyContent.innerHTML = `
-        <div class="modal-grid">
-            <div class="modal-img-container">
-                <img src="${prod.image}" alt="${prod.name}" onerror="this.src='https://images.unsplash.com/photo-1593095948071-474c5cc2989d?q=80&w=600&auto=format&fit=crop'">
-            </div>
-            <div class="modal-info">
-                <span class="modal-brand">${prod.brand}</span>
-                <h2 class="modal-title">${prod.name}</h2>
-                <div class="modal-benefit-badge">Foco & Rendimento</div>
-                
-                <p class="modal-desc">${prod.description}</p>
-                
-                <ul style="list-style:none; font-size: 13px; color: var(--text-secondary); margin-bottom: 20px; display:flex; flex-direction:column; gap:6px;">
-                    ${benefitsList}
-                </ul>
-
-                <h4 style="font-family: var(--font-headings); font-weight:800; font-size:14px; text-transform:uppercase; margin-bottom: 10px; color: var(--text-primary);">Informação Nutricional</h4>
-                <div class="modal-details-table">
-                    ${nutRows}
-                </div>
-
-                <div class="modal-price-box">
-                    <div style="display:flex; flex-direction:column;">
-                        ${hasDiscount ? `<span class="old-price" style="margin-bottom:0;">De R$ ${prod.originalPrice.toFixed(2)}</span>` : ''}
-                        <span class="current-price">R$ ${prod.price.toFixed(2)}</span>
-                        <span class="pix-note">Valor com 5% de Desconto via Pix</span>
-                    </div>
-                    <div style="font-size:12px; text-align:right; color: var(--text-secondary);">
-                        ou <strong>R$ ${cartaoPrice.toFixed(2)}</strong><br>sem desconto no cartão
-                    </div>
-                </div>
-
-                <div class="product-actions" style="grid-template-columns: 1fr 1fr;">
-                    <button class="btn btn-primary" onclick="buyNowSingle(${prod.id})">
-                        COMPRAR VIA WHATSAPP
-                    </button>
-                    <button class="btn btn-outline" onclick="addToCart(${prod.id}); closeModal();">
-                        ADD AO CARRINHO
-                    </button>
-                </div>
+            <div class="product-actions">
+                <a class="btn btn-success btn-order" href="${buildWhatsAppUrl(prod)}" target="_blank" rel="noopener">
+                    ${WHATSAPP_ICON}
+                    <span>Pedir no WhatsApp</span>
+                </a>
             </div>
         </div>
     `;
 
-    productModal.classList.add("active");
-    document.body.style.overflow = "hidden";
+    // Toque na descrição expande/recolhe o texto completo
+    const desc = card.querySelector(".product-description");
+    if (desc) desc.addEventListener("click", () => desc.classList.toggle("expanded"));
+
+    return card;
 }
 
-function closeModal() {
-    productModal.classList.remove("active");
-    if (!cartDrawer.classList.contains("active")) {
-        document.body.style.overflow = "";
-    }
-}
-
-// ==========================================================================
-// Envio para WhatsApp (Checkout)
-// ==========================================================================
-
-// Comprar produto único imediatamente
-function buyNowSingle(productId) {
-    const prod = PRODUCTS.find(p => p.id === productId);
-    if (!prod) return;
-
-    const cartaoPrice = prod.originalPrice || (prod.price / (1 - STORE_CONFIG.pixDiscount));
-
-    let message = `🔥 *OLÁ! QUERO FECHAR ESSE SUPLEMENTO:* 🔥\n\n`;
-    message += `👉 *Produto:* ${prod.name}\n`;
-    message += `🏷️ *Marca:* ${prod.brand}\n`;
-    message += `💵 *Preço no Pix:* R$ ${prod.price.toFixed(2)}\n`;
-    message += `💳 *Preço no Cartão:* R$ ${cartaoPrice.toFixed(2)}\n\n`;
-    message += `----------------------------------\n`;
-    message += `🛵 *Curitiba e Região Metropolitana*\n`;
-    message += `Gostaria de combinar a entrega/retirada desse item!`;
-
-    const whatsappUrl = `https://wa.me/${STORE_CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, "_blank");
-}
-
-// Enviar todo o carrinho consolidado
-function sendCartToWhatsApp() {
-    if (cart.length === 0) return;
-
-    let baseCartaoSubtotal = 0;
-
-    let message = `🔥 *NOVO PEDIDO - CTBA SUPLEMENTOS* 🔥\n`;
-    message += `----------------------------------\n`;
-    message += `Gostaria de fechar os seguintes suplementos:\n\n`;
-
-    cart.forEach((item, index) => {
-        const itemOriginalPrice = item.product.originalPrice || (item.product.price / (1 - STORE_CONFIG.pixDiscount));
-        const itemSubtotalCartao = itemOriginalPrice * item.quantity;
-        baseCartaoSubtotal += itemSubtotalCartao;
-
-        message += `*${item.quantity}x* ${item.product.name}\n`;
-        message += `   └ Marca: ${item.product.brand}\n`;
-        message += `   └ Subtotal: R$ ${itemSubtotalCartao.toFixed(2)} (${item.quantity}x R$ ${itemOriginalPrice.toFixed(2)})\n\n`;
-    });
-
-    const discountAmount = baseCartaoSubtotal * STORE_CONFIG.pixDiscount;
-    const totalPix = baseCartaoSubtotal - discountAmount;
-
-    message += `----------------------------------\n`;
-    message += `💰 *Subtotal no Cartão:* R$ ${baseCartaoSubtotal.toFixed(2)}\n`;
-    message += `⚡ *Total com Desconto Pix (5% Off):* R$ ${totalPix.toFixed(2)}\n\n`;
-    message += `🛵 *Entrega/Retirada:* A combinar para Curitiba ou Região Metropolitana.\n`;
-    message += `Gostaria de verificar o frete e as formas de pagamento!`;
-
-    const whatsappUrl = `https://wa.me/${STORE_CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, "_blank");
+// Usado quando uma foto cadastrada não carrega
+function createImagePlaceholder() {
+    const el = document.createElement("div");
+    el.className = "image-placeholder";
+    el.textContent = "Foto em breve";
+    return el;
 }

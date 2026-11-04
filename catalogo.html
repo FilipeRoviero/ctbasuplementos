@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!-- teste de deploy -->
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo completo da Ctbasuplementos: whey, creatina, pré-treino, hipercalóricos, combos e mais. Escolha a categoria e peça direto no WhatsApp.">
+    <title>Catálogo | Ctbasuplementos</title>
+    <link rel="icon" type="image/jpeg" href="assets/favicon.jpg">
+    <!-- Google Fonts: Outfit (heavy headlines) & Inter (clean reading) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;800;900&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="catalogo">
+    <!-- Top Alert Bar -->
+    <div class="top-bar">
+        <span>⚡ ENTREGAS RÁPIDAS EM CURITIBA E REGIÃO METROPOLITANA</span>
+        <span class="desktop-only">| 🔥 5% DE DESCONTO NO PIX</span>
+    </div>
+
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo" aria-label="CTBA Suplementos - página inicial">
+                <span class="logo-ctba">CTBA</span>
+                <span class="logo-sups">SUPLEMENTOS</span>
+            </a>
+
+            <div class="search-container desktop-only">
+                <input type="text" id="search-input-desktop" placeholder="Buscar whey, creatina, pré-treino...">
+                <button class="search-btn" aria-label="Pesquisar">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+            </div>
+
+            <!-- Menu principal: barra no desktop, painel com hambúrguer no celular -->
+            <nav id="main-nav" class="main-nav" aria-label="Menu principal">
+                <a href="index.html" class="nav-link">Kits</a>
+                <a href="catalogo.html" class="nav-link active" aria-current="page">Catálogo</a>
+                <a href="https://wa.me/554191331314?text=Ol%C3%A1%2C+gostaria+de+tirar+d%C3%BAvidas+sobre+suplementos%21" target="_blank" rel="noopener" class="nav-link nav-whatsapp">WhatsApp</a>
+            </nav>
+
+            <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Search Bar (Sticky/Visible on Mobile) -->
+    <div class="mobile-search-bar container mobile-only">
+        <div class="search-container">
+            <input type="text" id="search-input-mobile" placeholder="Buscar whey, creatina, pré-treino...">
+            <button class="search-btn" aria-label="Pesquisar">
+                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Catálogo completo com filtro por categoria -->
+    <section id="catalogo" class="catalog-section container">
+        <div class="section-header">
+            <h1 class="section-title">CATÁLOGO <span class="highlight-text">COMPLETO</span></h1>
+            <p class="section-subtitle">Selecione uma categoria abaixo ou busque pelo produto desejado</p>
+        </div>
+
+        <!-- Filtros por categoria (gerados a partir de CATEGORIES em produtos.js) -->
+        <div id="category-filters" class="category-filters" role="group" aria-label="Filtrar por categoria"></div>
+
+        <!-- Active Filters Indicator / Search Status -->
+        <div id="search-status" class="search-status hidden">
+            <span>Resultados para "<strong id="search-query-display"></strong>"</span>
+            <button id="clear-search-btn">Limpar Filtro</button>
+        </div>
+
+        <!-- Products Grid -->
+        <div id="products-grid" class="products-grid">
+            <div class="loading-products">Carregando produtos...</div>
+        </div>
+
+        <div id="load-more-container" class="load-more-container hidden">
+            <button id="load-more-btn" class="btn btn-outline btn-lg fade-in">Ver mais suplementos</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <span class="logo-ctba">CTBA</span>
+                    <span class="logo-sups">SUPLEMENTOS</span>
+                </a>
+                <p class="footer-desc">Seu combustível diário para a hipertrofia e alta performance. Selecionamos as melhores marcas do mercado nacional e importado.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="#" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Categorias</h4>
+                <ul>
+                    <li><a href="catalogo.html?categoria=aminoacidos" class="cat-link">Aminoácidos</a></li>
+                    <li><a href="catalogo.html?categoria=barrinhas" class="cat-link">Barrinhas</a></li>
+                    <li><a href="catalogo.html?categoria=combos" class="cat-link">Combos</a></li>
+                    <li><a href="catalogo.html?categoria=creatina" class="cat-link">Creatina</a></li>
+                    <li><a href="catalogo.html?categoria=hiper-sem-lac" class="cat-link">Hipercalórico Zero Lactose</a></li>
+                    <li><a href="catalogo.html?categoria=hipercalorico" class="cat-link">Hipercalórico</a></li>
+                    <li><a href="catalogo.html?categoria=pasta-de-amendoim" class="cat-link">Pasta de Amendoim</a></li>
+                    <li><a href="catalogo.html?categoria=pre-sem-cafeina" class="cat-link">Pré-treino S/ Cafeína</a></li>
+                    <li><a href="catalogo.html?categoria=pre-treino" class="cat-link">Pré-treino</a></li>
+                    <li><a href="catalogo.html?categoria=repositores" class="cat-link">Repositores</a></li>
+                    <li><a href="catalogo.html?categoria=termogenico" class="cat-link">Termogênico</a></li>
+                    <li><a href="catalogo.html?categoria=vitaminas%20e%20omega%203" class="cat-link">Vitaminas e Ômega 3</a></li>
+                    <li><a href="catalogo.html?categoria=whey-iso" class="cat-link">Whey Isolado</a></li>
+                    <li><a href="catalogo.html?categoria=whey-protein" class="cat-link">Whey Protein</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-info">
+                <h4>Informações</h4>
+                <p>📍 Atendimento Curitiba e Região Metropolitana.</p>
+                <p>🛵 Entrega via motoboy rápida (Consulte taxa para seu bairro).</p>
+                <p>💳 Aceitamos Cartões de Crédito, Débito e Pix.</p>
+                <p>💬 WhatsApp: <strong>(41) 9133-1314</strong></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CTBA SUPLEMENTOS. Todos os direitos reservados. Desenvolvido para campeões.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="produtos.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
