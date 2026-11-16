@@ -464,7 +464,7 @@ const PRODUCTS = [
         brand: "",
         category: "combos",
         price: 199.90,
-        image: "", // ainda sem foto: coloque o caminho, ex. assets/combos/arquivo.png
+        image: "assets/combos/combo-whey-max-creatina-300g.png",
         description: "Combo com Whey Max 100% mais Creatina Max 300g pura. Solicite o sabor de sua preferência . Parcele em até 3x sem Juros Morango,Chocolate,Baunilha, Cookies"
     },
     {
@@ -473,7 +473,7 @@ const PRODUCTS = [
         brand: "",
         category: "combos",
         price: 249.90,
-        image: "", // ainda sem foto: coloque o caminho, ex. assets/combos/arquivo.png
+        image: "assets/combos/combo-whey-health-hiper-creatina.png",
         description: "No combo vai 01 Whey 2kg Health 01 Hiper 3kg Body Action 01 Creatina 300g pura Solicite os sabores de preferência"
     },
     {
@@ -482,7 +482,7 @@ const PRODUCTS = [
         brand: "",
         category: "combos",
         price: 199.90,
-        image: "", // ainda sem foto: coloque o caminho, ex. assets/combos/arquivo.png
+        image: "assets/combos/combo-whey-blackskull-creatina.png",
         description: "Solicite o sabor de sua preferência."
     },
     {
@@ -491,7 +491,7 @@ const PRODUCTS = [
         brand: "",
         category: "combos",
         price: 179.90,
-        image: "", // ainda sem foto: coloque o caminho, ex. assets/combos/arquivo.png
+        image: "assets/combos/combo-whey-health-drpeanut.png",
         description: "No combo vai : Whey 2kg + Dr Peanut 600g R$179,90 Solicite o sabor de sua preferência"
     },
     {
@@ -500,7 +500,7 @@ const PRODUCTS = [
         brand: "",
         category: "combos",
         price: 289.90,
-        image: "", // ainda sem foto: coloque o caminho, ex. assets/combos/arquivo.png
+        image: "assets/combos/combo-whey-health-insane.png",
         description: "No combo você leva 01 Whey Health 2.1kg + 01 Pré treino Insane Clown 350g. Solicite o sabor de sua preferência."
     },
     {
@@ -510,7 +510,7 @@ const PRODUCTS = [
         category: "combos",
         price: null,
         // PREÇO A CONFIRMAR (no catálogo do WhatsApp: R$ 209.90 ou R$ 219.90). Produto oculto no site enquanto price for null.
-        image: "", // ainda sem foto: coloque o caminho, ex. assets/combos/arquivo.png
+        image: "assets/combos/combo-whey-nutrata-creatina.png",
         description: "No combo vai os dois itens . Solicite o sabor de sua preferência ."
     },
     {
@@ -528,7 +528,7 @@ const PRODUCTS = [
         brand: "",
         category: "combos",
         price: 199.90,
-        image: "", // ainda sem foto: coloque o caminho, ex. assets/combos/arquivo.png
+        image: "assets/combos/combo-whey-mellius-creatina.png",
         description: "No combo você leva 01 Whey Mellius 2kg + 01 Creatina 300g Integralmedica 300g Pura. Solicite o sabor de sua preferência."
     },
     {
@@ -884,7 +884,7 @@ const PRODUCTS = [
         brand: "",
         category: "combos",
         price: 269.90,
-        image: "", // ainda sem foto: coloque o caminho, ex. assets/combos/arquivo.png
+        image: "assets/combos/combo-whey-tasty-creatina.png",
         description: "Combo Tasty Whey Diversos sabores . Proteína Isolada,Concentrada e Hidrolisada. Mais proteína 100% pura 300g"
     },
     {
@@ -902,7 +902,7 @@ const PRODUCTS = [
         brand: "",
         category: "combos",
         price: 279.90,
-        image: "", // ainda sem foto: coloque o caminho, ex. assets/combos/arquivo.png
+        image: "assets/combos/combo-whey-dux-creatina.png",
         description: "Solicitar o sabor de Preferência."
     },
     {
@@ -965,7 +965,7 @@ const PRODUCTS = [
         brand: "",
         category: "combos",
         price: 249.90,
-        image: "", // ainda sem foto: coloque o caminho, ex. assets/combos/arquivo.png
+        image: "assets/combos/combo-whey-health-creapure.png",
         description: "Combo com Whey 2.1kg mais Creatina Creapure 250g Solicite o sabor de sua preferência . Parcele em até 3x sem Juros Ninho,Ovomaltine,Chocolate,Baunilha,Capuccino,Banana com Canela e Chocolate Branco ."
     },
     {
@@ -1010,7 +1010,7 @@ const PRODUCTS = [
         brand: "",
         category: "combos",
         price: 199.90,
-        image: "", // ainda sem foto: coloque o caminho, ex. assets/combos/arquivo.png
+        image: "assets/combos/combo-whey-probiotica-creatina.png",
         description: "Combo campeão da Probiotica por R$189,90 no Pix ou R$199,90 até 3x 100% Whey Probiotica – recuperação e crescimento muscular Creatina 300g pura – mais força e explosão nos treinos Qualidade, resultado e custo-benefício de verdade. Garanta o seu antes que acabe!"
     },
 ];
